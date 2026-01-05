@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrégateur RSS - Actualités</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3a0ca3;
+            --accent-color: #4cc9f0;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --gray-color: #6c757d;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            margin-bottom: 40px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: var(--gray-color);
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            background: var(--light-color);
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .article-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+        }
+        
+        .article-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .article-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .article-content {
+            padding: 25px;
+        }
+        
+        .article-source {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .article-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        .article-title a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        .article-title a:hover {
+            color: var(--primary-color);
+        }
+        
+        .article-description {
+            color: var(--gray-color);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--gray-color);
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+        
+        .read-more {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .read-more:hover {
+            background: var(--secondary-color);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--gray-color);
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .update-time {
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .no-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .stats {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-rss"></i> Agrégateur RSS</h1>
+            <p class="subtitle">Toutes vos actualités en un seul endroit</p>
+            <div class="stats">
+                <div class="stat-item">
+                    <i class="fas fa-newspaper"></i> 50 articles
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-feather-alt"></i> 5 sources
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-sync-alt"></i> Mis à jour régulièrement
+                </div>
+            </div>
+        </header>
+        
+        <main>
+            <div class="articles-grid">
+
+                <article class="article-card">
+                    <div class="no-image"><i class="fas fa-newspaper"></i></div>
+                    <div class="article-content">
+                        <span class="article-source">Geekflare</span>
+                        <h2 class="article-title">
+                            <a href="https://geekflare.com/best/best-global-contractor-software/" target="_blank">9 Best Global Contractor Management Platforms</a>
+                        </h2>
+                        <p class="article-description"><img align="left" alt="best global contractor management platforms" class="attachment-IMAGESIZE size-IMAGESIZE wp-post-image" height="630" src="https://geekflare.com/wp-content/uploads/2023/07/platfor...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 24/09/2025 07:59</span>
+                            <a href="https://geekflare.com/best/best-global-contractor-software/" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="no-image"><i class="fas fa-newspaper"></i></div>
+                    <div class="article-content">
+                        <span class="article-source">Réseau & Sécurité | UnderNews</span>
+                        <h2 class="article-title">
+                            <a href="https://www.undernews.fr/reseau-securite/comment-se-creent-les-failles-au-sein-dun-systeme-dinformations.html" target="_blank">Comment se créent les failles au sein d’un système d’informations ?</a>
+                        </h2>
+                        <p class="article-description"><p>Lorsqu’une faille de sécurité est découverte au sein d’un système d’information (SI), la réaction est souvent la même : chercher une cause purement technique comme un bug, une mauvaise configuratio...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 17/12/2025 15:25</span>
+                            <a href="https://www.undernews.fr/reseau-securite/comment-se-creent-les-failles-au-sein-dun-systeme-dinformations.html" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="no-image"><i class="fas fa-newspaper"></i></div>
+                    <div class="article-content">
+                        <span class="article-source">Réseau & Sécurité | UnderNews</span>
+                        <h2 class="article-title">
+                            <a href="https://www.undernews.fr/reseau-securite/cybersecurite-2026-les-organisations-sous-la-pression-des-jeux-et-de-lia.html" target="_blank">Cybersécurité 2026 : les organisations sous la pression des Jeux et de l’IA</a>
+                        </h2>
+                        <p class="article-description"><p>Mimecast, leader mondial de la cybersécurité qui redéfinit la manière dont les organisations sécurisent les risques humains, annonce ses prédictions en matière de menaces cyber pour l’année 2026. L...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 17/12/2025 14:34</span>
+                            <a href="https://www.undernews.fr/reseau-securite/cybersecurite-2026-les-organisations-sous-la-pression-des-jeux-et-de-lia.html" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="no-image"><i class="fas fa-newspaper"></i></div>
+                    <div class="article-content">
+                        <span class="article-source">Geekflare</span>
+                        <h2 class="article-title">
+                            <a href="https://geekflare.com/best/ark-survival-ascended-hosting/" target="_blank">Best ARK Survival Ascended Hosting</a>
+                        </h2>
+                        <p class="article-description"><img align="left" alt="best ark survival ascended hosting" class="attachment-IMAGESIZE size-IMAGESIZE wp-post-image" height="630" src="https://geekflare.com/wp-content/uploads/2025/09/best-ark-surviva...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 03/09/2025 11:26</span>
+                            <a href="https://geekflare.com/best/ark-survival-ascended-hosting/" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="no-image"><i class="fas fa-newspaper"></i></div>
+                    <div class="article-content">
+                        <span class="article-source">Réseau & Sécurité | UnderNews</span>
+                        <h2 class="article-title">
+                            <a href="https://www.undernews.fr/reseau-securite/cybersecurite-lintegration-des-plateformes-redefinira-la-protection-face-aux-menaces-ia-en-2026.html" target="_blank">Cybersécurité : l’intégration des plateformes redéfinira la protection face aux menaces IA en 2026</a>
+                        </h2>
+                        <p class="article-description"><p>En 2025, les services de sécurité ont fait face à des défis majeurs : recrudescence du ransomware, phishing assisté par l’IA, campagnes parrainées par des États, et un manque de préparation face à ...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 23/12/2025 12:53</span>
+                            <a href="https://www.undernews.fr/reseau-securite/cybersecurite-lintegration-des-plateformes-redefinira-la-protection-face-aux-menaces-ia-en-2026.html" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="no-image"><i class="fas fa-newspaper"></i></div>
+                    <div class="article-content">
+                        <span class="article-source">Réseau & Sécurité | UnderNews</span>
+                        <h2 class="article-title">
+                            <a href="https://www.undernews.fr/reseau-securite/cybersecurite-collectivites-lenjeu-souvent-sous-estime-des-peripheriques-usb.html" target="_blank">Cybersécurité & collectivités : l’enjeu souvent sous-estimé des périphériques USB</a>
+                        </h2>
+                        <p class="article-description"><p>Au regard des nombreux services délivrés aux citoyens, le secteur public est aujourd’hui fortement exposé au risque Cyber. Dans ce contexte, au sein des collectivités, et plus particulièrement dans...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 16/12/2025 14:51</span>
+                            <a href="https://www.undernews.fr/reseau-securite/cybersecurite-collectivites-lenjeu-souvent-sous-estime-des-peripheriques-usb.html" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="no-image"><i class="fas fa-newspaper"></i></div>
+                    <div class="article-content">
+                        <span class="article-source">Réseau & Sécurité | UnderNews</span>
+                        <h2 class="article-title">
+                            <a href="https://www.undernews.fr/reseau-securite/etude-de-knowbe4-96-des-organisations-peinent-a-securiser-leurs-equipes.html" target="_blank">Étude de KnowBe4 : 96 % des organisations peinent à sécuriser leurs équipes</a>
+                        </h2>
+                        <p class="article-description"><p>Le rapport 2025 sur l’état du risque humain montre une augmentation des incidents liés au facteur humain ainsi que des violations impliquant des applications d’IA. Tribune &#8211; KnowBe4, la plate...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 16/12/2025 11:17</span>
+                            <a href="https://www.undernews.fr/reseau-securite/etude-de-knowbe4-96-des-organisations-peinent-a-securiser-leurs-equipes.html" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="no-image"><i class="fas fa-newspaper"></i></div>
+                    <div class="article-content">
+                        <span class="article-source">Geekflare</span>
+                        <h2 class="article-title">
+                            <a href="https://geekflare.com/blog/quotes-about-ai/" target="_blank">50 Popular Quotes About AI</a>
+                        </h2>
+                        <p class="article-description"><img align="left" alt="quotes about ai" class="attachment-IMAGESIZE size-IMAGESIZE wp-post-image" height="630" src="https://geekflare.com/wp-content/uploads/2025/08/quotes-about-ai.jpg" style="margin-...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 12/08/2025 10:02</span>
+                            <a href="https://geekflare.com/blog/quotes-about-ai/" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="no-image"><i class="fas fa-newspaper"></i></div>
+                    <div class="article-content">
+                        <span class="article-source">Geekflare</span>
+                        <h2 class="article-title">
+                            <a href="https://geekflare.com/blog/how-bitrix24-support-remote-working/" target="_blank">How Bitrix24 Supports Remote and Hybrid Working</a>
+                        </h2>
+                        <p class="article-description"><img align="left" alt="bitrix24 supports remote and hybrid working" class="attachment-IMAGESIZE size-IMAGESIZE wp-post-image" height="1075" src="https://geekflare.com/wp-content/uploads/2025/10/bitrix...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 07/10/2025 12:22</span>
+                            <a href="https://geekflare.com/blog/how-bitrix24-support-remote-working/" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="no-image"><i class="fas fa-newspaper"></i></div>
+                    <div class="article-content">
+                        <span class="article-source">Réseau & Sécurité | UnderNews</span>
+                        <h2 class="article-title">
+                            <a href="https://www.undernews.fr/reseau-securite/2025-annee-noire-des-pannes-it-mondiales-quelles-lecons-pour-les-entreprises.html" target="_blank">2025, année noire des pannes IT mondiales : quelles leçons pour les entreprises ?</a>
+                        </h2>
+                        <p class="article-description"><p>L’actualité de 2025 a été rythmée par les tensions géopolitiques, les fluctuations de l’économie mondiale et les avancées de l’intelligence artificielle (IA). Pourtant, un autre phénomène s’est imp...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 18/12/2025 21:16</span>
+                            <a href="https://www.undernews.fr/reseau-securite/2025-annee-noire-des-pannes-it-mondiales-quelles-lecons-pour-les-entreprises.html" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="no-image"><i class="fas fa-newspaper"></i></div>
+                    <div class="article-content">
+                        <span class="article-source">Réseau & Sécurité | UnderNews</span>
+                        <h2 class="article-title">
+                            <a href="https://www.undernews.fr/reseau-securite/lattaque-du-ministere-de-linterieur-souligne-lurgence-dune-cyber-recuperation-intelligente.html" target="_blank">L’attaque du ministère de l’Intérieur souligne l’urgence d’une cyber-récupération intelligente</a>
+                        </h2>
+                        <p class="article-description"><p>L&#8217;attaque contre le ministère de l&#8217;Intérieur révèle une vérité que trop d&#8217;institutions publiques et privées tardent à accepter : avoir une sauvegarde ne suffit plus. Il faut une s...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 18/12/2025 10:46</span>
+                            <a href="https://www.undernews.fr/reseau-securite/lattaque-du-ministere-de-linterieur-souligne-lurgence-dune-cyber-recuperation-intelligente.html" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="no-image"><i class="fas fa-newspaper"></i></div>
+                    <div class="article-content">
+                        <span class="article-source">Réseau & Sécurité | UnderNews</span>
+                        <h2 class="article-title">
+                            <a href="https://www.undernews.fr/reseau-securite/cybersecurite-atteindre-lequilibre.html" target="_blank">Cybersécurité : atteindre l’équilibre</a>
+                        </h2>
+                        <p class="article-description"><p>La cybersécurité a changé. Poncif ? Peut-être. Mais est-on bien certain de savoir mesurer toutes les implications de cette étonnante évolution ? Peut-être pas. Depuis les dernières directives issue...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 18/12/2025 10:03</span>
+                            <a href="https://www.undernews.fr/reseau-securite/cybersecurite-atteindre-lequilibre.html" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="no-image"><i class="fas fa-newspaper"></i></div>
+                    <div class="article-content">
+                        <span class="article-source">Geekflare</span>
+                        <h2 class="article-title">
+                            <a href="https://geekflare.com/blog/free-ai-courses/" target="_blank">Free AI Courses from Google & Harvard to Start Learning Today</a>
+                        </h2>
+                        <p class="article-description"><img align="left" alt="free ai courses google harvard" class="attachment-IMAGESIZE size-IMAGESIZE wp-post-image" height="1075" src="https://geekflare.com/wp-content/uploads/2025/08/free-ai-courses-goo...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 07/08/2025 13:10</span>
+                            <a href="https://geekflare.com/blog/free-ai-courses/" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="no-image"><i class="fas fa-newspaper"></i></div>
+                    <div class="article-content">
+                        <span class="article-source">Geekflare</span>
+                        <h2 class="article-title">
+                            <a href="https://geekflare.com/blog/ai-terminology/" target="_blank">AI Terminology & Abbreviations Commonly Used</a>
+                        </h2>
+                        <p class="article-description"><img align="left" alt="ai terminology abbreviations" class="attachment-IMAGESIZE size-IMAGESIZE wp-post-image" height="1075" src="https://geekflare.com/wp-content/uploads/2025/08/ai-terminology-abbrev...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 07/08/2025 11:05</span>
+                            <a href="https://geekflare.com/blog/ai-terminology/" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="no-image"><i class="fas fa-newspaper"></i></div>
+                    <div class="article-content">
+                        <span class="article-source">Réseau & Sécurité | UnderNews</span>
+                        <h2 class="article-title">
+                            <a href="https://www.undernews.fr/reseau-securite/pourquoi-et-comment-securiser-vos-appareils-numeriques.html" target="_blank">Pourquoi et comment sécuriser vos appareils numériques ?</a>
+                        </h2>
+                        <p class="article-description"><p>Aujourd&#8217;hui, une grande quantité d&#8217;informations personnelles sont contenues dans un ordinateur, un smartphone ou une tablette. Certaines d&#8217;entre elles sont considérées comme sensi...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 22/12/2025 13:23</span>
+                            <a href="https://www.undernews.fr/reseau-securite/pourquoi-et-comment-securiser-vos-appareils-numeriques.html" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="no-image"><i class="fas fa-newspaper"></i></div>
+                    <div class="article-content">
+                        <span class="article-source">Geekflare</span>
+                        <h2 class="article-title">
+                            <a href="https://geekflare.com/reviews/respondio-review/" target="_blank">Respond.io Review: Is It Actually Worth the Money?</a>
+                        </h2>
+                        <p class="article-description"><img align="left" alt="respondio review" class="attachment-IMAGESIZE size-IMAGESIZE wp-post-image" height="1075" src="https://geekflare.com/wp-content/uploads/2025/11/respondio-review-scaled.jpg" styl...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 17/11/2025 12:56</span>
+                            <a href="https://geekflare.com/reviews/respondio-review/" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="no-image"><i class="fas fa-newspaper"></i></div>
+                    <div class="article-content">
+                        <span class="article-source">Geekflare</span>
+                        <h2 class="article-title">
+                            <a href="https://geekflare.com/reviews/surveymonkey-review/" target="_blank">SurveyMonkey Review – Tested Surveys, Forms and Quizzes</a>
+                        </h2>
+                        <p class="article-description"><img align="left" alt="surveymonkey review" class="attachment-IMAGESIZE size-IMAGESIZE wp-post-image" height="1075" src="https://geekflare.com/wp-content/uploads/2025/11/surveymonkey-review-scaled.jpg...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 10/11/2025 12:30</span>
+                            <a href="https://geekflare.com/reviews/surveymonkey-review/" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://img.lemde.fr/2026/01/04/560/0/8963/4481/644/322/60/0/ef6c38f_ftp-1-b4ib0q9g22l9-9608ac56df65486a96efc5ff3ad00bb1-0-d36f8e759c9b4ad8a157acbab484846b.jpg" alt="Venezuela : selon le droit international, la « lutte contre le narcotrafic, la protection de la démocratie ne constituent pas des fondements juridiques du recours à la force »" class="article-image">
+                    <div class="article-content">
+                        <span class="article-source">Le Monde.fr - Actualités et Infos en France et dans le monde</span>
+                        <h2 class="article-title">
+                            <a href="https://www.lemonde.fr/international/article/2026/01/05/attaque-americaine-au-venezuela-selon-le-droit-international-la-lutte-contre-le-narcotrafic-la-protection-de-la-democratie-ne-constituent-pas-des-fondements-juridiques-du-recours-a-la-force_6660619_3210.html" target="_blank">Venezuela : selon le droit international, la « lutte contre le narcotrafic, la protection de la démocratie ne constituent pas des fondements juridiques du recours à la force »</a>
+                        </h2>
+                        <p class="article-description">Le droit international est sans aucune ambiguïté : l’attaque américaine sur Caracas est une « agression », et le statut des forces américaines au Venezuela n’a pas de base légale solide.</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 05/01/2026 13:00</span>
+                            <a href="https://www.lemonde.fr/international/article/2026/01/05/attaque-americaine-au-venezuela-selon-le-droit-international-la-lutte-contre-le-narcotrafic-la-protection-de-la-democratie-ne-constituent-pas-des-fondements-juridiques-du-recours-a-la-force_6660619_3210.html" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://img.lemde.fr/2026/01/05/490/0/5881/2940/644/322/60/0/e49a410_ftp-1-eicbbsznjwow-2026-01-05t072040z-449712311-rc2ouiarcqwt-rtrmadp-3-usa-trump.JPG" alt="Après l’intervention militaire au Venezuela, Donald Trump enchaîne les menaces, contre le Groenland ou Cuba" class="article-image">
+                    <div class="article-content">
+                        <span class="article-source">Le Monde.fr - Actualités et Infos en France et dans le monde</span>
+                        <h2 class="article-title">
+                            <a href="https://www.lemonde.fr/international/video/2026/01/05/danemark-cuba-mexique-donald-trump-multiplie-les-menaces-apres-l-intervention-americaine-au-venezuela_6660616_3210.html" target="_blank">Après l’intervention militaire au Venezuela, Donald Trump enchaîne les menaces, contre le Groenland ou Cuba</a>
+                        </h2>
+                        <p class="article-description">A bord d’Air Force One, le président américain a affirmé avoir « besoin » du Groenland pour des raisons de « sécurité nationale » et que les Etats-Unis s’en « préoccuperaient » d’ici deux mois. Il a é...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 05/01/2026 12:30</span>
+                            <a href="https://www.lemonde.fr/international/video/2026/01/05/danemark-cuba-mexique-donald-trump-multiplie-les-menaces-apres-l-intervention-americaine-au-venezuela_6660616_3210.html" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://img.lemde.fr/2026/01/05/395/0/5698/2849/644/322/60/0/91f873e_ftp-1-gvhj5mycbyxb-5fd7b9af214a45b092c5df4ccc5e7a4f-0-0483d1de6e454600b3d9e39652633082.jpg" alt="Cyberharcèlement contre Brigitte Macron : jusqu’à six mois de prison ferme pour les prévenus condamnés" class="article-image">
+                    <div class="article-content">
+                        <span class="article-source">Le Monde.fr - Actualités et Infos en France et dans le monde</span>
+                        <h2 class="article-title">
+                            <a href="https://www.lemonde.fr/societe/article/2026/01/05/les-cyberharceleurs-de-brigitte-macron-condamnes-jusqu-a-6-mois-de-prison-ferme_6660611_3224.html" target="_blank">Cyberharcèlement contre Brigitte Macron : jusqu’à six mois de prison ferme pour les prévenus condamnés</a>
+                        </h2>
+                        <p class="article-description">Des peines de prison ont été prononcées à Paris pour sanctionner la diffusion en ligne de propos haineux concernant le genre et la vie privée de l’épouse du chef de l’Etat.</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 05/01/2026 12:06</span>
+                            <a href="https://www.lemonde.fr/societe/article/2026/01/05/les-cyberharceleurs-de-brigitte-macron-condamnes-jusqu-a-6-mois-de-prison-ferme_6660611_3224.html" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://www.journaldugeek.com/app/uploads/2026/01/Plaud-pinS-1280x853.jpg" alt="Intelligence artificielle : Plaud dévoile le futur de la prise de notes" class="article-image">
+                    <div class="article-content">
+                        <span class="article-source">Journal du Geek</span>
+                        <h2 class="article-title">
+                            <a href="https://www.journaldugeek.com/2026/01/05/intelligence-artificielle-plaud-devoile-le-futur-de-la-prise-de-notes/" target="_blank">Intelligence artificielle : Plaud dévoile le futur de la prise de notes</a>
+                        </h2>
+                        <p class="article-description"><img alt="Plaud Pins" class="attachment-full size-full wp-post-image" height="1280" src="https://www.journaldugeek.com/app/uploads/2026/01/Plaud-pinS.jpg" width="1920" /><br /><br />Plaud lance NotePi...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 05/01/2026 12:00</span>
+                            <a href="https://www.journaldugeek.com/2026/01/05/intelligence-artificielle-plaud-devoile-le-futur-de-la-prise-de-notes/" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://www.01net.com/app/uploads/2025/09/IA-illustration-intelligence-artificielle--1344x896.jpg" alt="Espionnage et tentative d’extorsion via l’IA… Le Renseignement alerte les entreprises françaises" class="article-image">
+                    <div class="article-content">
+                        <span class="article-source">Actualités</span>
+                        <h2 class="article-title">
+                            <a href="https://www.01net.com/actualites/espionnage-et-tentative-dextorsion-via-lia-le-renseignement-alerte-les-entreprises-francaises.html" target="_blank">Espionnage et tentative d’extorsion via l’IA… Le Renseignement alerte les entreprises françaises</a>
+                        </h2>
+                        <p class="article-description"><img alt="Ia Illustration Intelligence Artificielle" class="attachment-full size-full wp-post-image" height="1280" src="https://www.01net.com/app/uploads/2025/09/IA-illustration-intelligence-artificie...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 05/01/2026 11:44</span>
+                            <a href="https://www.01net.com/actualites/espionnage-et-tentative-dextorsion-via-lia-le-renseignement-alerte-les-entreprises-francaises.html" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://www.journaldugeek.com/app/uploads/2026/01/house-of-the-dragon-final-1280x853.jpg" alt="Le sort de House of the Dragon est déjà scellé : la fin est en vue" class="article-image">
+                    <div class="article-content">
+                        <span class="article-source">Journal du Geek</span>
+                        <h2 class="article-title">
+                            <a href="https://www.journaldugeek.com/2026/01/05/le-sort-de-house-of-the-dragon-est-deja-scelle-la-fin-est-en-vue/" target="_blank">Le sort de House of the Dragon est déjà scellé : la fin est en vue</a>
+                        </h2>
+                        <p class="article-description"><img alt="House Of The Dragon Final" class="attachment-full size-full wp-post-image" height="1280" src="https://www.journaldugeek.com/app/uploads/2026/01/house-of-the-dragon-final.jpg" width="1920" />...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 05/01/2026 11:42</span>
+                            <a href="https://www.journaldugeek.com/2026/01/05/le-sort-de-house-of-the-dragon-est-deja-scelle-la-fin-est-en-vue/" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://www.01net.com/app/uploads/2025/08/DSC09475-19-Samsung-Galaxy-Z-Flip-7-1344x896.jpg" alt="Galaxy Z Flip 8 et Z Fold 8 : Samsung pourrait réussir un véritable tour de force" class="article-image">
+                    <div class="article-content">
+                        <span class="article-source">Actualités</span>
+                        <h2 class="article-title">
+                            <a href="https://www.01net.com/actualites/galaxy-z-flip-8-z-fold-8-samsung-pourrait-reussir-tour-de-force.html" target="_blank">Galaxy Z Flip 8 et Z Fold 8 : Samsung pourrait réussir un véritable tour de force</a>
+                        </h2>
+                        <p class="article-description"><img alt="Dsc09475 19 Samsung Galaxy Z Flip 7" class="attachment-full size-full wp-post-image" height="1280" src="https://www.01net.com/app/uploads/2025/08/DSC09475-19-Samsung-Galaxy-Z-Flip-7.jpg" wid...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 05/01/2026 11:14</span>
+                            <a href="https://www.01net.com/actualites/galaxy-z-flip-8-z-fold-8-samsung-pourrait-reussir-tour-de-force.html" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://www.journaldugeek.com/app/uploads/2026/01/clicks-communicator-1280x853.jpg" alt="Cette marque veut relancer les smartphones avec clavier physique" class="article-image">
+                    <div class="article-content">
+                        <span class="article-source">Journal du Geek</span>
+                        <h2 class="article-title">
+                            <a href="https://www.journaldugeek.com/2026/01/05/cette-marque-veut-relancer-les-smartphones-avec-clavier-physique/" target="_blank">Cette marque veut relancer les smartphones avec clavier physique</a>
+                        </h2>
+                        <p class="article-description"><img alt="Clicks Communicator" class="attachment-full size-full wp-post-image" height="1280" src="https://www.journaldugeek.com/app/uploads/2026/01/clicks-communicator.jpg" width="1920" /><br /><br />...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 05/01/2026 11:13</span>
+                            <a href="https://www.journaldugeek.com/2026/01/05/cette-marque-veut-relancer-les-smartphones-avec-clavier-physique/" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://img.lemde.fr/2026/01/05/688/0/8256/4128/644/322/60/0/a46e793_ftp-1-xpvdnettvlfv-5805221-01-06.jpg" alt="Neige et verglas : la vigilance orange s’étend à 26 départements, de la Bretagne à l’Ile-de-France" class="article-image">
+                    <div class="article-content">
+                        <span class="article-source">Le Monde.fr - Actualités et Infos en France et dans le monde</span>
+                        <h2 class="article-title">
+                            <a href="https://www.lemonde.fr/planete/article/2026/01/05/neige-et-verglas-la-vigilance-orange-s-etend-a-26-departements_6660578_3245.html" target="_blank">Neige et verglas : la vigilance orange s’étend à 26 départements, de la Bretagne à l’Ile-de-France</a>
+                        </h2>
+                        <p class="article-description">L’épisode de froid se poursuit pour une bonne partie du pays, selon Météo-France, qui prévoit de maintenir ce niveau d’alerte jusqu’à mardi matin. La quantité de neige attendue va de 2 cm à 3 cm en ré...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 05/01/2026 11:06</span>
+                            <a href="https://www.lemonde.fr/planete/article/2026/01/05/neige-et-verglas-la-vigilance-orange-s-etend-a-26-departements_6660578_3245.html" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://img.lemde.fr/2026/01/04/1440/0/8640/4320/644/322/60/0/6989e0d_ftp-1-m17dpz2b1nax-5800697-01-06.jpg" alt="Venezuela : ce que contient l’acte d’accusation de la justice américaine contre Nicolas Maduro" class="article-image">
+                    <div class="article-content">
+                        <span class="article-source">Le Monde.fr - Actualités et Infos en France et dans le monde</span>
+                        <h2 class="article-title">
+                            <a href="https://www.lemonde.fr/international/article/2026/01/05/enlevement-de-nicolas-maduro-ce-que-contient-l-acte-d-accusation-de-la-justice-americaine_6660600_3210.html" target="_blank">Venezuela : ce que contient l’acte d’accusation de la justice américaine contre Nicolas Maduro</a>
+                        </h2>
+                        <p class="article-description">Accusé de « conspiration narcoterroriste » dans un document publié samedi, le président du Venezuela risque la prison à perpétuité, mais l’implication réelle de l’Etat vénézuélien dans le trafic de dr...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 05/01/2026 11:00</span>
+                            <a href="https://www.lemonde.fr/international/article/2026/01/05/enlevement-de-nicolas-maduro-ce-que-contient-l-acte-d-accusation-de-la-justice-americaine_6660600_3210.html" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://www.01net.com/app/uploads/2025/02/kidnapping-crypto-1344x896.jpg" alt="Trois ans plus tard, le piratage de LastPass continue de faire des dégâts" class="article-image">
+                    <div class="article-content">
+                        <span class="article-source">Actualités</span>
+                        <h2 class="article-title">
+                            <a href="https://www.01net.com/actualites/trois-ans-plus-tard-piratage-lastpass-continue-faire-degats.html" target="_blank">Trois ans plus tard, le piratage de LastPass continue de faire des dégâts</a>
+                        </h2>
+                        <p class="article-description"><img alt="Kidnapping Crypto" class="attachment-full size-full wp-post-image" height="1280" src="https://www.01net.com/app/uploads/2025/02/kidnapping-crypto.jpg" width="1920" /><br /><br />Le piratage ...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 05/01/2026 10:59</span>
+                            <a href="https://www.01net.com/actualites/trois-ans-plus-tard-piratage-lastpass-continue-faire-degats.html" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="no-image"><i class="fas fa-newspaper"></i></div>
+                    <div class="article-content">
+                        <span class="article-source">Réseau & Sécurité | UnderNews</span>
+                        <h2 class="article-title">
+                            <a href="https://www.undernews.fr/reseau-securite/kaspersky-identifie-lia-comme-menace-de-securite-majeure-pour-le-secteur-du-divertissement-en-2026.html" target="_blank">Kaspersky identifie l’IA comme menace de sécurité majeure pour le secteur du divertissement en 2026</a>
+                        </h2>
+                        <p class="article-description"><p>Le nouveau chapitre du Kaspersky Security Bulletin analyse l&#8217;impact potentiel de l&#8217;Intelligence Artificielle (IA) sur le secteur mondial du divertissement en 2026. L&#8217;étude couvre ...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 05/01/2026 10:49</span>
+                            <a href="https://www.undernews.fr/reseau-securite/kaspersky-identifie-lia-comme-menace-de-securite-majeure-pour-le-secteur-du-divertissement-en-2026.html" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://www.journaldugeek.com/app/uploads/2026/01/star-wars-racer-revenge-ps4-jailbreak-PS5-1280x853.jpg" alt="Hack de la PS5 : ce jeu Star Wars serait la clé du jailbreak et devient hors de prix" class="article-image">
+                    <div class="article-content">
+                        <span class="article-source">Journal du Geek</span>
+                        <h2 class="article-title">
+                            <a href="https://www.journaldugeek.com/2026/01/05/hack-de-la-ps5-ce-jeu-star-wars-serait-la-cle-du-jailbreak-et-devient-hors-de-prix/" target="_blank">Hack de la PS5 : ce jeu Star Wars serait la clé du jailbreak et devient hors de prix</a>
+                        </h2>
+                        <p class="article-description"><img alt="Star Wars Racer Revenge Ps4 Jailbreak Ps5" class="attachment-full size-full wp-post-image" height="1280" src="https://www.journaldugeek.com/app/uploads/2026/01/star-wars-racer-revenge-ps4-ja...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 05/01/2026 10:48</span>
+                            <a href="https://www.journaldugeek.com/2026/01/05/hack-de-la-ps5-ce-jeu-star-wars-serait-la-cle-du-jailbreak-et-devient-hors-de-prix/" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://img.lemde.fr/2026/01/05/633/0/7601/3800/644/322/60/0/d050163_ftp-1-53xl1bzzlvlu-5803935-01-06.jpg" alt="Groenland : après les nouvelles menaces de Donald Trump, les messages de soutien se multiplient en Europe" class="article-image">
+                    <div class="article-content">
+                        <span class="article-source">Le Monde.fr - Actualités et Infos en France et dans le monde</span>
+                        <h2 class="article-title">
+                            <a href="https://www.lemonde.fr/international/article/2026/01/05/ca-suffit-reagit-le-groenland-face-aux-menaces-de-donald-trump-les-messages-de-soutien-se-multiplient-en-europe_6660595_3210.html" target="_blank">Groenland : après les nouvelles menaces de Donald Trump, les messages de soutien se multiplient en Europe</a>
+                        </h2>
+                        <p class="article-description">France, Suède, Norvège, Finlande… Les messages de soutien au Danemark de la communauté internationale se multiplient après les nouvelles menaces du président américain de « s’occuper » de l’île arctiq...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 05/01/2026 10:43</span>
+                            <a href="https://www.lemonde.fr/international/article/2026/01/05/ca-suffit-reagit-le-groenland-face-aux-menaces-de-donald-trump-les-messages-de-soutien-se-multiplient-en-europe_6660595_3210.html" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://www.journaldugeek.com/app/uploads/2025/06/Xbox-logo-2-1280x853.jpg" alt="Les ventes de consoles Xbox continuent leur déclin historique" class="article-image">
+                    <div class="article-content">
+                        <span class="article-source">Journal du Geek</span>
+                        <h2 class="article-title">
+                            <a href="https://www.journaldugeek.com/2026/01/05/les-ventes-de-consoles-xbox-continuent-leur-declin-historique/" target="_blank">Les ventes de consoles Xbox continuent leur déclin historique</a>
+                        </h2>
+                        <p class="article-description"><img alt="Xbox Logo (2)" class="attachment-full size-full wp-post-image" height="1280" src="https://www.journaldugeek.com/app/uploads/2025/06/Xbox-logo-2.jpg" width="1920" /><br /><br />Les consoles X...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 05/01/2026 10:37</span>
+                            <a href="https://www.journaldugeek.com/2026/01/05/les-ventes-de-consoles-xbox-continuent-leur-declin-historique/" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://www.01net.com/app/uploads/2026/01/GeForce-Now-Nvidia-1344x896.jpg" alt="Nvidia préparerait une appli GeForce Now pour Linux" class="article-image">
+                    <div class="article-content">
+                        <span class="article-source">Actualités</span>
+                        <h2 class="article-title">
+                            <a href="https://www.01net.com/actualites/nvidia-preparerait-une-appli-geforce-now-pour-linux.html" target="_blank">Nvidia préparerait une appli GeForce Now pour Linux</a>
+                        </h2>
+                        <p class="article-description"><img alt="Geforce Now Nvidia" class="attachment-full size-full wp-post-image" height="1000" src="https://www.01net.com/app/uploads/2026/01/GeForce-Now-Nvidia.jpg" width="1500" /><br /><br />Les joueur...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 05/01/2026 10:22</span>
+                            <a href="https://www.01net.com/actualites/nvidia-preparerait-une-appli-geforce-now-pour-linux.html" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://img.lemde.fr/2025/12/17/996/0/5976/2988/644/322/60/0/0f79a01_upload-1-gb6g93qubj5z-tg20251216695.jpg" alt="« Les omissions d’Emmanuel Macron sur le Venezuela risquent de sonner comme un aveu d’impuissance »" class="article-image">
+                    <div class="article-content">
+                        <span class="article-source">Le Monde.fr - Actualités et Infos en France et dans le monde</span>
+                        <h2 class="article-title">
+                            <a href="https://www.lemonde.fr/politique/article/2026/01/05/les-silences-du-president-francais-sur-le-venezuela-risquent-de-sonner-comme-un-aveu-d-impuissance_6660589_823448.html" target="_blank">« Les omissions d’Emmanuel Macron sur le Venezuela risquent de sonner comme un aveu d’impuissance »</a>
+                        </h2>
+                        <p class="article-description">La première réaction du chef de l’Etat, samedi soir, à propos de l’enlèvement de Nicolas Maduro, qui ne dit pas un mot des modalités de l’intervention américaine, a semblé acter une rupture avec la tr...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 05/01/2026 10:05</span>
+                            <a href="https://www.lemonde.fr/politique/article/2026/01/05/les-silences-du-president-francais-sur-le-venezuela-risquent-de-sonner-comme-un-aveu-d-impuissance_6660589_823448.html" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://www.journaldugeek.com/app/uploads/2026/01/Avatar-3-box-office-1280x853.jpg" alt="Avatar 3 : James Cameron est bien parti pour échouer" class="article-image">
+                    <div class="article-content">
+                        <span class="article-source">Journal du Geek</span>
+                        <h2 class="article-title">
+                            <a href="https://www.journaldugeek.com/2026/01/05/avatar-3-james-cameron-est-bien-parti-pour-echouer/" target="_blank">Avatar 3 : James Cameron est bien parti pour échouer</a>
+                        </h2>
+                        <p class="article-description"><img alt="Avatar 3 Box Office" class="attachment-full size-full wp-post-image" height="1280" src="https://www.journaldugeek.com/app/uploads/2026/01/Avatar-3-box-office.jpg" width="1920" /><br /><br />...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 05/01/2026 10:04</span>
+                            <a href="https://www.journaldugeek.com/2026/01/05/avatar-3-james-cameron-est-bien-parti-pour-echouer/" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://www.01net.com/app/uploads/2026/01/asus-zenfone-12-ultra-01net-1344x896.jpg" alt="ASUS ne sortira aucun smartphone en 2026 : vers la fin d’une ère ?" class="article-image">
+                    <div class="article-content">
+                        <span class="article-source">Actualités</span>
+                        <h2 class="article-title">
+                            <a href="https://www.01net.com/actualites/asus-ne-sortira-aucun-smartphone-en-2026-vers-la-fin-dune-ere.html" target="_blank">ASUS ne sortira aucun smartphone en 2026 : vers la fin d’une ère ?</a>
+                        </h2>
+                        <p class="article-description"><img alt="Asus Zenfone 12 Ultra 01net" class="attachment-full size-full wp-post-image" height="1280" src="https://www.01net.com/app/uploads/2026/01/asus-zenfone-12-ultra-01net.jpg" width="1920" /><br ...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 05/01/2026 10:02</span>
+                            <a href="https://www.01net.com/actualites/asus-ne-sortira-aucun-smartphone-en-2026-vers-la-fin-dune-ere.html" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://img.lemde.fr/2025/12/17/1100/501/4134/2067/644/322/60/0/9d421b0_upload-1-apx1ibcakq4j-tg20251216733.jpg" alt="EN DIRECT, Venezuela : Emmanuel Macron critique finalement la « méthode employée » pour renverser Nicolas Maduro, « ni soutenue ni approuvée » par la France" class="article-image">
+                    <div class="article-content">
+                        <span class="article-source">Le Monde.fr - Actualités et Infos en France et dans le monde</span>
+                        <h2 class="article-title">
+                            <a href="https://www.lemonde.fr/international/live/2026/01/05/en-direct-enlevement-de-nicolas-maduro-la-presidente-par-interim-appelle-a-la-cooperation-avec-les-etats-unis-deux-jours-apres-l-enlevement-de-nicolas-maduro_6660411_3210.html" target="_blank">EN DIRECT, Venezuela : Emmanuel Macron critique finalement la « méthode employée » pour renverser Nicolas Maduro, « ni soutenue ni approuvée » par la France</a>
+                        </h2>
+                        <p class="article-description">Le chef de l’Etat a aussi dit, lundi en conseil des ministres, que le dirigeant vénézuélien était « un dictateur » et que son départ était « une bonne nouvelle pour les Vénézuéliens ». Il avait été cr...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 05/01/2026 09:52</span>
+                            <a href="https://www.lemonde.fr/international/live/2026/01/05/en-direct-enlevement-de-nicolas-maduro-la-presidente-par-interim-appelle-a-la-cooperation-avec-les-etats-unis-deux-jours-apres-l-enlevement-de-nicolas-maduro_6660411_3210.html" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://img.lemde.fr/2026/01/05/911/0/5790/2895/644/322/60/0/efa5dc9_ftp-1-sqsup4r2wuma-2026-01-05t081816z-248641900-rc2uuiaceymb-rtrmadp-3-ukraine-crisis-attack-kyiv.JPG" alt="EN DIRECT, guerre en Ukraine : nouvelles attaques russes de Kiev et Kherson, des hôpitaux et des infrastructures énergétiques touchés" class="article-image">
+                    <div class="article-content">
+                        <span class="article-source">Le Monde.fr - Actualités et Infos en France et dans le monde</span>
+                        <h2 class="article-title">
+                            <a href="https://www.lemonde.fr/international/live/2026/01/05/en-direct-guerre-en-ukraine-nouvelles-attaques-russes-sur-kiev-et-nouvelles-coupures-de-courant-dans-une-nuit-a-8-c_6660486_3210.html" target="_blank">EN DIRECT, guerre en Ukraine : nouvelles attaques russes de Kiev et Kherson, des hôpitaux et des infrastructures énergétiques touchés</a>
+                        </h2>
+                        <p class="article-description">Dans la périphérie de la capitale ukrainienne et dans l’oblast de l’Est, les frappes – qui ont fait un mort et plusieurs blessés – ont nécessité le lancement de systèmes de secours alors que les tempé...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 05/01/2026 09:52</span>
+                            <a href="https://www.lemonde.fr/international/live/2026/01/05/en-direct-guerre-en-ukraine-nouvelles-attaques-russes-sur-kiev-et-nouvelles-coupures-de-courant-dans-une-nuit-a-8-c_6660486_3210.html" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://www.01net.com/app/uploads/2025/10/chrome-faille-urgence-1344x896.jpg" alt="Alerte Chrome, Edge et Firefox : un empire de l’espionnage chinois a été découvert" class="article-image">
+                    <div class="article-content">
+                        <span class="article-source">Actualités</span>
+                        <h2 class="article-title">
+                            <a href="https://www.01net.com/actualites/alerte-chrome-edge-firefox-empire-espionnage-chinois-decouvert.html" target="_blank">Alerte Chrome, Edge et Firefox : un empire de l’espionnage chinois a été découvert</a>
+                        </h2>
+                        <p class="article-description"><img alt="Chrome Faille Urgence" class="attachment-full size-full wp-post-image" height="1280" src="https://www.01net.com/app/uploads/2025/10/chrome-faille-urgence.jpg" width="1920" /><br /><br />Un e...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 05/01/2026 09:36</span>
+                            <a href="https://www.01net.com/actualites/alerte-chrome-edge-firefox-empire-espionnage-chinois-decouvert.html" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://www.journaldugeek.com/app/uploads/2026/01/gobelet-1280x853.jpg" alt="“Pas de solutions industrielles” : les gobelets jetables en plastique ne seront finalement pas interdits en 2026" class="article-image">
+                    <div class="article-content">
+                        <span class="article-source">Journal du Geek</span>
+                        <h2 class="article-title">
+                            <a href="https://www.journaldugeek.com/2026/01/05/pas-de-solutions-industrielles-les-gobelets-jetables-en-plastique-ne-seront-finalement-pas-interdits-en-2026/" target="_blank">“Pas de solutions industrielles” : les gobelets jetables en plastique ne seront finalement pas interdits en 2026</a>
+                        </h2>
+                        <p class="article-description"><img alt="Gobelet" class="attachment-full size-full wp-post-image" height="1280" src="https://www.journaldugeek.com/app/uploads/2026/01/gobelet.jpg" width="1920" /><br /><br />Le gouvernement français...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 05/01/2026 09:32</span>
+                            <a href="https://www.journaldugeek.com/2026/01/05/pas-de-solutions-industrielles-les-gobelets-jetables-en-plastique-ne-seront-finalement-pas-interdits-en-2026/" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://www.01net.com/app/uploads/2025/07/doctolib-arnaque-1344x896.jpg" alt="Nouvelle fuite de données en France : Doctolib dément être responsable du vol de 150 000 dossiers de patients" class="article-image">
+                    <div class="article-content">
+                        <span class="article-source">Actualités</span>
+                        <h2 class="article-title">
+                            <a href="https://www.01net.com/actualites/fuite-donnees-doctolib-informations-milliers-francais-compromises.html" target="_blank">Nouvelle fuite de données en France : Doctolib dément être responsable du vol de 150 000 dossiers de patients</a>
+                        </h2>
+                        <p class="article-description"><img alt="Doctolib Arnaque" class="attachment-full size-full wp-post-image" height="1280" src="https://www.01net.com/app/uploads/2025/07/doctolib-arnaque.jpg" width="1920" /><br /><br />Doctolib s'est...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 05/01/2026 09:29</span>
+                            <a href="https://www.01net.com/actualites/fuite-donnees-doctolib-informations-milliers-francais-compromises.html" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://www.01net.com/app/uploads/2026/01/narwal-flow-2-1344x896.jpg" alt="Fini la corvée du rangement avant l’aspirateur ? Narwal présente le Flow 2" class="article-image">
+                    <div class="article-content">
+                        <span class="article-source">Actualités</span>
+                        <h2 class="article-title">
+                            <a href="https://www.01net.com/actualites/fini-corvee-rangement-avant-aspirateur-narwal-presente-flow-2.html" target="_blank">Fini la corvée du rangement avant l’aspirateur ? Narwal présente le Flow 2</a>
+                        </h2>
+                        <p class="article-description"><img alt="Narwal Flow 2" class="attachment-full size-full wp-post-image" height="1280" src="https://www.01net.com/app/uploads/2026/01/narwal-flow-2.jpg" width="1920" /><br /><br />Le Narwal Flow 2, fr...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 05/01/2026 09:27</span>
+                            <a href="https://www.01net.com/actualites/fini-corvee-rangement-avant-aspirateur-narwal-presente-flow-2.html" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://www.journaldugeek.com/app/uploads/2025/01/une-hp-2025-01-07T142953.726-1280x852.jpeg" alt="Faut-il fermer les volets pour réduire sa facture de chauffage ?" class="article-image">
+                    <div class="article-content">
+                        <span class="article-source">Journal du Geek</span>
+                        <h2 class="article-title">
+                            <a href="https://www.journaldugeek.com/2026/01/05/faut-il-fermer-les-volets-pour-reduire-sa-facture-de-chauffage/" target="_blank">Faut-il fermer les volets pour réduire sa facture de chauffage ?</a>
+                        </h2>
+                        <p class="article-description"><img alt="Une Hp 2025 01 07t142953.726" class="attachment-full size-full wp-post-image" height="932" src="https://www.journaldugeek.com/app/uploads/2025/01/une-hp-2025-01-07T142953.726.jpeg" width="14...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 05/01/2026 09:27</span>
+                            <a href="https://www.journaldugeek.com/2026/01/05/faut-il-fermer-les-volets-pour-reduire-sa-facture-de-chauffage/" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://www.01net.com/app/uploads/2026/01/Honor-Magic-8-Lite-1344x896.jpg" alt="Voici le Honor Magic 8 Lite : il mise tout sur la robustesse et l’autonomie" class="article-image">
+                    <div class="article-content">
+                        <span class="article-source">Actualités</span>
+                        <h2 class="article-title">
+                            <a href="https://www.01net.com/actualites/voici-le-honor-magic-8-lite-il-mise-tout-sur-la-robustesse-et-lautonomie.html" target="_blank">Voici le Honor Magic 8 Lite : il mise tout sur la robustesse et l’autonomie</a>
+                        </h2>
+                        <p class="article-description"><img alt="Honor Magic 8 Lite" class="attachment-full size-full wp-post-image" height="1280" src="https://www.01net.com/app/uploads/2026/01/Honor-Magic-8-Lite.jpg" width="1920" /><br /><br />Honor anno...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 05/01/2026 09:15</span>
+                            <a href="https://www.01net.com/actualites/voici-le-honor-magic-8-lite-il-mise-tout-sur-la-robustesse-et-lautonomie.html" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://www.journaldugeek.com/app/uploads/2025/11/call-of-duty-black-ops-7-ia-1280x853.jpg" alt="Call of Duty : rien ne va plus pour Activision" class="article-image">
+                    <div class="article-content">
+                        <span class="article-source">Journal du Geek</span>
+                        <h2 class="article-title">
+                            <a href="https://www.journaldugeek.com/2026/01/05/call-of-duty-rien-ne-va-plus-pour-activision/" target="_blank">Call of Duty : rien ne va plus pour Activision</a>
+                        </h2>
+                        <p class="article-description"><img alt="Call Of Duty Black Ops 7 Ia" class="attachment-full size-full wp-post-image" height="1280" src="https://www.journaldugeek.com/app/uploads/2025/11/call-of-duty-black-ops-7-ia.jpg" width="1920...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 05/01/2026 09:01</span>
+                            <a href="https://www.journaldugeek.com/2026/01/05/call-of-duty-rien-ne-va-plus-pour-activision/" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://www.01net.com/app/uploads/2026/01/Design-sans-titre-3-1344x896.jpg" alt="Les Redmi Note 15 sont là : que valent les champions du rapport qualité-prix de Xiaomi en 2026 ?" class="article-image">
+                    <div class="article-content">
+                        <span class="article-source">Actualités</span>
+                        <h2 class="article-title">
+                            <a href="https://www.01net.com/actualites/les-redmi-note-15-sont-la-que-valent-les-champions-du-rapport-qualite-prix-de-xiaomi-en-2026.html" target="_blank">Les Redmi Note 15 sont là : que valent les champions du rapport qualité-prix de Xiaomi en 2026 ?</a>
+                        </h2>
+                        <p class="article-description"><img alt="Xiaomi Redmi Note 15 Pro 5G" class="attachment-full size-full wp-post-image" height="1280" src="https://www.01net.com/app/uploads/2026/01/Design-sans-titre-3.jpg" width="1920" /><br /><br />...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 05/01/2026 09:00</span>
+                            <a href="https://www.01net.com/actualites/les-redmi-note-15-sont-la-que-valent-les-champions-du-rapport-qualite-prix-de-xiaomi-en-2026.html" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://www.journaldugeek.com/app/uploads/2026/01/hack-1280x853.jpg" alt="Les données de milliers de patients français sont sur le dark web, pourquoi Doctolib est accusé (à tort) ?" class="article-image">
+                    <div class="article-content">
+                        <span class="article-source">Journal du Geek</span>
+                        <h2 class="article-title">
+                            <a href="https://www.journaldugeek.com/2026/01/05/fuite-massive-liee-a-doctolib-les-donnees-de-milliers-de-patients-francais-sont-sur-le-dark-web/" target="_blank">Les données de milliers de patients français sont sur le dark web, pourquoi Doctolib est accusé (à tort) ?</a>
+                        </h2>
+                        <p class="article-description"><img alt="Hack" class="attachment-full size-full wp-post-image" height="1280" src="https://www.journaldugeek.com/app/uploads/2026/01/hack.jpg" width="1920" /><br /><br />Une fuite massive de données p...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 05/01/2026 08:32</span>
+                            <a href="https://www.journaldugeek.com/2026/01/05/fuite-massive-liee-a-doctolib-les-donnees-de-milliers-de-patients-francais-sont-sur-le-dark-web/" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://img.lemde.fr/2026/01/04/478/0/4323/2161/644/322/60/0/8c57ea7_upload-1-1y2gpqnp6kjs-urbs-logement.jpeg" alt="Pourquoi il est devenu si difficile de se loger en France" class="article-image">
+                    <div class="article-content">
+                        <span class="article-source">Le Monde.fr - Actualités et Infos en France et dans le monde</span>
+                        <h2 class="article-title">
+                            <a href="https://www.lemonde.fr/economie/article/2026/01/05/en-france-la-crise-du-logement-touche-toutes-les-classes-sociales_6660568_3234.html" target="_blank">Pourquoi il est devenu si difficile de se loger en France</a>
+                        </h2>
+                        <p class="article-description">Le nombre de ménages augmente en France, en raison de la croissance démographique et de la décohabitation, et, pourtant, la croissance du parc de logements s’atténue. La difficulté à se loger touche t...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 05/01/2026 05:45</span>
+                            <a href="https://www.lemonde.fr/economie/article/2026/01/05/en-france-la-crise-du-logement-touche-toutes-les-classes-sociales_6660568_3234.html" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="no-image"><i class="fas fa-newspaper"></i></div>
+                    <div class="article-content">
+                        <span class="article-source">Geekflare</span>
+                        <h2 class="article-title">
+                            <a href="https://geekflare.com/blog/top-ai-models-list/" target="_blank">Top AI Models List</a>
+                        </h2>
+                        <p class="article-description"><img align="left" alt="top ai models list" class="attachment-IMAGESIZE size-IMAGESIZE wp-post-image" height="1075" src="https://geekflare.com/wp-content/uploads/2025/08/top-ai-models-list--scaled.jpg"...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 08/08/2025 08:01</span>
+                            <a href="https://geekflare.com/blog/top-ai-models-list/" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="no-image"><i class="fas fa-newspaper"></i></div>
+                    <div class="article-content">
+                        <span class="article-source">Geekflare</span>
+                        <h2 class="article-title">
+                            <a href="https://geekflare.com/blog/how-bitrix24-leverages-ai/" target="_blank">How Bitrix24 Leverages AI for Improved Team Productivity</a>
+                        </h2>
+                        <p class="article-description"><img align="left" alt="bitrix24 leverages ai for improved team productivity" class="attachment-IMAGESIZE size-IMAGESIZE wp-post-image" height="1075" src="https://geekflare.com/wp-content/uploads/2025/...</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 03/10/2025 06:51</span>
+                            <a href="https://geekflare.com/blog/how-bitrix24-leverages-ai/" target="_blank" class="read-more">
+                                Lire <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </main>
+        
+        <footer>
+            <p>Généré automatiquement à partir de 5 flux RSS différents</p>
+            <p class="update-time">Dernière mise à jour : 05/01/2026 à 13:14</p>
+            <p style="margin-top: 20px;">
+                <i class="fas fa-code"></i> Généré avec Python & Feedparser
+            </p>
+        </footer>
+    </div>
+    
+    <script>
+        // Animation au chargement des articles
+        document.addEventListener('DOMContentLoaded', function() {
+            const articles = document.querySelectorAll('.article-card');
+            articles.forEach((article, index) => {
+                article.style.opacity = '0';
+                article.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    article.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    article.style.opacity = '1';
+                    article.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+        
+        // Confirmation avant d'ouvrir un lien externe
+        document.querySelectorAll('.read-more').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (!confirm('Vous allez quitter cette page. Continuer ?')) {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
