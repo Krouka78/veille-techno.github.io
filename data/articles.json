@@ -1,0 +1,680 @@
+{
+  "miseAJour": "2026-10-25T09:40:27.799Z",
+  "articles": [
+    {
+      "titre": "Biometric Update: FIDO sets out certification framework for digital identity wallets",
+      "lien": "https://fidoalliance.org/biometric-update-fido-sets-out-certification-framework-for-digital-identity-wallets/",
+      "date": "2026-10-21",
+      "resume": "FIDO Alliance is advancing its digital identity wallet certification program with two technical frameworks intended to establish common requirements for credential management and help wallets verify the identity of services requesting […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Amazon is making it easier and safer for you to access your account with passwordless sign-in",
+      "lien": "https://fidoalliance.org/amazon-is-making-it-easier-and-safer-for-you-to-access-your-account-with-passwordless-sign-in-2/",
+      "date": "2026-10-20",
+      "resume": "More than 500 million Amazon customers are using passkeys, an easier and more secure way to sign in to your Amazon account. Key takeaways Amazon announced the rollout of passkey […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Authenticate 2026 Day 2: Building the foundation of trust for digital credentials",
+      "lien": "https://fidoalliance.org/authenticate-2026-day-2-building-the-foundation-of-trust-for-digital-credentials/",
+      "date": "2026-10-20",
+      "resume": "By Diego Zavala Yesterday we looked at how far passkeys have come and at the new frontier ahead. Today, that frontier comes into view as we announce steps to accelerate […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "FIDO Alliance Moves to Accelerate Digital Credentials Adoption at Scale",
+      "lien": "https://fidoalliance.org/fido-alliance-moves-to-accelerate-digital-credentials-adoption-at-scale/",
+      "date": "2026-10-20",
+      "resume": "Alliance unveils public key working documents for digital wallets and launches industry engagement forum at the annual Authenticate conference Carlsbad, Calif., October 20, 2026 – The FIDO Alliance today announced […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Authentication Issues Cost Frontline Organizations Thousands of Working Hours Each Year According to Research from Imprivata and FIDO Alliance",
+      "lien": "https://fidoalliance.org/authentication-issues-cost-frontline-organizations-thousands-of-working-hours-each-year-according-to-research-from-imprivata-and-fido-alliance/",
+      "date": "2026-10-19",
+      "resume": "Survey of 700 IT and security leaders reveals delayed patient care, widespread security workarounds and concern over AI-enabled impersonation Waltham, Mass. – October 19, 2026 — Authentication problems for frontline […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Authenticate 2026 day 1: From passkeys to the new frontier",
+      "lien": "https://fidoalliance.org/authenticate-2026-day-1-from-passkeys-to-the-new-frontier/",
+      "date": "2026-10-19",
+      "resume": "Author: Andrew Shikiar Authenticate 2026 is underway in Carlsbad. Listening to the conversations in the session rooms and the hallways today, it is clear the conversation around authentication and passkeys […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Frontline Friction: The State of Authentication for Frontline Workers",
+      "lien": "https://fidoalliance.org/frontline-friction-the-state-of-authentication-for-frontline-workers/",
+      "date": "2026-10-19",
+      "resume": "A research report by Imprivata and the FIDO Alliance Executive Summary For organizations with frontline workers, authentication friction is leading to major real-world consequences, such as delaying vital patient care, […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Passkey Index 2026",
+      "lien": "https://fidoalliance.org/passkey-index-2026/",
+      "date": "2026-10-15",
+      "resume": "Executive Summary Passkeys have moved from deployment to adoption. While last year’s Index showed that passkeys were available to almost every user, the Passkey Index 2026 shows they are being […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "7 Billion Passkeys and Counting: The Next Chapter of Passwordless Authentication",
+      "lien": "https://fidoalliance.org/7-billion-passkeys-and-counting-the-next-chapter-of-passwordless-authentication/",
+      "date": "2026-10-15",
+      "resume": "Passkeys have reached a new milestone, FIDO now estimates that 7 billion passkeys are in use worldwide. And new data suggests something even more important is happening. People aren’t just […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "The 2026 Dashlane Passkey Power 20",
+      "lien": "https://fidoalliance.org/the-2026-dashlane-passkey-power-20/",
+      "date": "2026-10-13",
+      "resume": "About this report The 2026 Dashlane Passkey Power 20 is based on an analysis of Dashlane data encompassing millions of aggregated and anonymized web and mobile passkey authentications globally from […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "ID Tech: SecuGen Unity 20 Fingerprint Security Key Gains FIDO2 Certification",
+      "lien": "https://fidoalliance.org/id-tech-secugen-unity-20-fingerprint-security-key-gains-fido2-certification/",
+      "date": "2026-10-12",
+      "resume": "SecuGen’s Unity 20 FIDO2 fingerprint security key has gained FIDO Alliance certification, adding a biometric hardware authenticator to the company’s product range. The device creates and stores passkeys for passwordless […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Security Informed: Intercede Launches MyID Authenticate Passkey Solution",
+      "lien": "https://fidoalliance.org/security-informed-intercede-launches-myid-authenticate-passkey-solution/",
+      "date": "2026-10-12",
+      "resume": "Intercede has launched MyID® Authenticate, a FIDO passkey authentication solution for government agencies and enterprises. The platform enables phishing-resistant sign-in to Windows desktops, cloud services and on-premises applications. It will […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "ID Tech: IDEMIA Adds Passkeys and Restricted-Use Tokens for AI-Agent Payments",
+      "lien": "https://fidoalliance.org/id-tech-idemia-adds-passkeys-and-restricted-use-tokens-for-ai-agent-payments/",
+      "date": "2026-10-05",
+      "resume": "IDEMIA Secure Transactions has introduced payment infrastructure for card networks that want to handle purchases initiated by AI agents. The offering combines payment tokenization, passkey-based cardholder authentication, limits on how […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "IoT News: WBA and FIDO test zero-touch IoT Wi-Fi onboarding",
+      "lien": "https://fidoalliance.org/iot-news-wba-and-fido-test-zero-touch-iot-wi-fi-onboarding/",
+      "date": "2026-09-28",
+      "resume": "Industrial operators can automate IoT onboarding across Wi-Fi networks through a joint specification from the Wireless Broadband Alliance (WBA) and FIDO Alliance. The framework pairs the WBA’s federated OpenRoaming architecture with FIDO Device […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Tech Times: Visa Payment Passkey Goes Live at Five India State Banks: OTP Attack Surface Eliminated",
+      "lien": "https://fidoalliance.org/tech-times-visa-payment-passkey-goes-live-at-five-india-state-banks-otp-attack-surface-eliminated/",
+      "date": "2026-09-28",
+      "resume": "India’s five-decade-old authentication habit — waiting for a six-digit code on a phone — got its first major structural challenge at the country’s public-sector banks last week, when Visa and […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Payments Dive: FIDO wrestles with agentic trust",
+      "lien": "https://fidoalliance.org/payments-dive-fido-wrestles-with-agentic-trust/",
+      "date": "2026-09-28",
+      "resume": "The industry consortium and payments players are considering standards for agentic commerce, particularly for verifying identity. To usher in the era of agentic commerce, payments players, tech companies and other […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Biometric Update: UK rolls out passkeys for GOV.UK One Login",
+      "lien": "https://fidoalliance.org/biometric-update-uk-rolls-out-passkeys-for-gov-uk-one-login/",
+      "date": "2026-09-18",
+      "resume": "The UK government is expanding passkey sign-in for GOV.UK One Login after an initial trial. Users can sign in with a face or fingerprint biometric scan, or a device passcode, […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Biometric Update: Passkeys in the post-quantum era: Why FIDO needs more than new algorithms",
+      "lien": "https://fidoalliance.org/biometric-update-passkeys-in-the-post-quantum-era-why-fido-needs-more-than-new-algorithms/",
+      "date": "2026-09-18",
+      "resume": "By Johann-Philipp Thiers, Security Specialist at Swissbit. Passkeys have become one of the most tangible examples of passwordless authentication. They are easier for users, more resistant to phishing, and a major […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "World Economic Forum: Why trust in AI agents requires open global standards",
+      "lien": "https://fidoalliance.org/world-economic-forum-why-trust-in-ai-agents-requires-open-global-standards/",
+      "date": "2026-09-18",
+      "resume": "Andrew Shikiar Executive Director & Chief Executive Officer, FIDO Alliance AI agents are already booking travel, comparing prices, negotiating terms and completing purchases on behalf of real people. And this is […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Biometric Update: Singapore expands Singpass passkeys to Android users",
+      "lien": "https://fidoalliance.org/biometric-update-singapore-expands-singpass-passkeys-to-android-users/",
+      "date": "2026-09-15",
+      "resume": "Singapore’s digital identity system Singpass has added passkey login to Android devices, the Government Technology Agency (GovTech) announced Wednesday. Android users will receive phased notifications via the Singpass app prompting […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "WebAuthn Level 3 Is Now a W3C Recommendation",
+      "lien": "https://fidoalliance.org/webauthn-level-3-is-now-a-w3c-recommendation/",
+      "date": "2026-08-31",
+      "resume": "On 25 August 2026, the W3C Web Authentication Working Group published Web Authentication: An API for accessing Public Key Credentials – Level 3 as a full W3C Recommendation. For those […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Biometric Update: From passkeys to digital trust with FIDO’s Andrew Shikiar",
+      "lien": "https://fidoalliance.org/biometric-update-from-passkeys-to-digital-trust-with-fidos-andrew-shikiar/",
+      "date": "2026-08-28",
+      "resume": "The Biometric Update Podcast explores the next phase of digital identity, from passkeys and digital wallets to continuous trust There’s a shift happening in identity and authentication. What was once […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Forging the Path to Enterprise Passkeys: A Collaborative Discussion by FIDO Board Members",
+      "lien": "https://fidoalliance.org/forging-the-path-to-enterprise-passkeys-a-collaborative-discussion-by-fido-board-members/",
+      "date": "2026-08-23",
+      "resume": "On July 22nd, representatives from two FIDO Alliance board and FIDO Japan WG members, RSA and Mercari, met in Tokyo to discuss the next critical frontier: Enterprise passkey adoption. The […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Recap: FIDO Alliance India Working Group Member Meetup & Workshop 2026",
+      "lien": "https://fidoalliance.org/recap-fido-alliance-india-working-group-member-meetup-workshop-2026/",
+      "date": "2026-08-23",
+      "resume": "On Friday, August 7th, 2026, the FIDO Alliance India Working Group hosted its third annual in-person Member Meetup and Workshop at Google Ananta, Bengaluru, gathering approximately 170 security leaders, engineers, […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "FIDO Spanish Webinar: Buenas prácticas para implementar passkeys",
+      "lien": "https://fidoalliance.org/fido-spanish-webinar-buenas-practicas-para-implementar-passkeys/",
+      "date": "2026-08-23",
+      "resume": "Watch the presentation Webinar | Buenas prácticas para implementar passkeys Las passkeys ya son una realidad, con más de 5.000 millones en uso y resultados comprobados en seguridad y experiencia. […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "GBFR: Beyond OTP: How Banks Can Build a Passkey Control Plane",
+      "lien": "https://fidoalliance.org/gbfr-beyond-otp-how-banks-can-build-a-passkey-control-plane/",
+      "date": "2026-08-18",
+      "resume": "Passkeys can reduce exposure to phishing and shared-secret theft, but the banking opportunity depends on disciplined enrolment, recovery, transaction controls and evidence. Standfirst Passkeys are moving bank authentication away from […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "SFWeekly: The End of Passwords? Preparing Your Company for Passkeys",
+      "lien": "https://fidoalliance.org/sfweekly-the-end-of-passwords-preparing-your-company-for-passkeys/",
+      "date": "2026-08-17",
+      "resume": "Key Takeaways How many passwords did you reset last month? If you’re like most people, the answer is “too many.” Between work tools, internal dashboards, customer platforms, and security requirements […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "OpenAI and Yubico Partner to Bring Custom Phishing-Resistant YubiKeys to OpenAI Users",
+      "lien": "https://fidoalliance.org/news-openai-and-yubico-partner-to-bring-custom-phishing-resistant-yubikeys-to-openai-users/",
+      "date": "2026-08-14",
+      "resume": "Beginning today, people can purchase a new 2-pack set of custom YubiKeys as part of OpenAI’s Advanced Account Security program – enabling them to secure their ChatGPT accounts with security […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Frontier Enterprise: Trust is an outcome, not a feature: FIDO CTO",
+      "lien": "https://fidoalliance.org/frontier-enterprise-trust-is-an-outcome-not-a-feature-fido-cto/",
+      "date": "2026-08-12",
+      "resume": "For the FIDO Alliance, the central constraint on digital identity is clear: Organisations and platforms must strengthen security without placing an additional burden on users. As digital services rapidly expand […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "FIDO Webinar | Enterprise Passkeys: What Works, What Doesn’t, and How to Roll Them Out",
+      "lien": "https://fidoalliance.org/fido-webinar-enterprise-passkeys-what-works-what-doesnt-and-how-to-roll-them-out/",
+      "date": "2026-08-10",
+      "resume": "Rolling out passkeys in a large enterprise is not just about enabling a new authentication method. Success depends on careful planning around enrollment, recovery, legacy applications, audit requirements, rollout strategy, […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "RSA and the FIDO Alliance Champion the Enterprise Passkey Revolution",
+      "lien": "https://fidoalliance.org/rsa-and-the-fido-alliance-champion-the-enterprise-passkey-revolution/",
+      "date": "2026-07-17",
+      "resume": "In this joint briefing, RSA Security’s Jim Taylor and the FIDO Alliance’s Andrew Shikiar detailed the global transition away from legacy passwords toward robust, phishing-resistant authentication methods. Andrew highlighted the explosive growth of consumer passkeys, noting […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Biometric Update: Microsoft and Google push passkeys deeper into workplace authentication",
+      "lien": "https://fidoalliance.org/biometric-update-microsoft-and-google-push-passkeys-deeper-into-workplace-authentication/",
+      "date": "2026-07-15",
+      "resume": "Microsoft and Google are pushing passkeys and hardware security keys deeper into workplace authentication, with Microsoft preparing to make passkeys the default authentication experience in Entra ID, and Google adding FIDO2-compliant […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "FIDO Alliance Releases Authenticate U.S. 2026 Agenda",
+      "lien": "https://fidoalliance.org/fido-alliance-releases-authenticate-u-s-2026-agenda/",
+      "date": "2026-07-09",
+      "resume": "Carlsbad, Calif., July 9, 2026 – The FIDO Alliance has announced the agenda for Authenticate U.S. 2026, the only industry conference dedicated to digital identity and authentication. The event will […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Cyber Insider: ExpressVPN adds passkeys on password manager, passes security audit",
+      "lien": "https://fidoalliance.org/cyber-insider-expressvpn-adds-passkeys-on-password-manager-passes-security-audit/",
+      "date": "2026-07-07",
+      "resume": "ExpressVPN has announced a major update to its standalone ExpressKeys password manager, adding passkey support, secure credential sharing, and direct vault imports. Alongside the release, the company published a new […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "FIDO Spanish Webinar: Introducción a passkeys",
+      "lien": "https://fidoalliance.org/introduccion-a-passkeys/",
+      "date": "2026-07-03",
+      "resume": "Watch the presentation WEBINAR | Introducción a passkeys Participa en nuestro webinar el 1 de julio de 2026 a las 11 a. m. ET para una introducción a passkeys (llaves […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Biometric Update: Yubico hackathon to preview YubiKey 5.8 support for next-generation passkeys",
+      "lien": "https://fidoalliance.org/biometric-update-yubico-hackathon-to-preview-yubikey-5-8-support-for-next-generation-passkeys/",
+      "date": "2026-07-01",
+      "resume": "Yubico will host a virtual developer hackathon for the FIDO Alliance developer community on August 5 to give developers an early look at the company’s upcoming YubiKey 5.8 firmware release and its support […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Identity Week: New FIDO Alliance and HID study reveals major gap between identity security confidence and reality",
+      "lien": "https://fidoalliance.org/identity-week-new-fido-alliance-and-hid-study-reveals-major-gap-between-identity-security-confidence-and-reality/",
+      "date": "2026-06-22",
+      "resume": "Research Reveals 94% of Enterprises Claim They Can Revoke Employee Access Within 24 Hours, Yet 35% experienced delays or failures in the past two years The FIDO Alliance and HID, […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Biometric Update: Passkey adoption stalls at scale despite strong interest, new study shows",
+      "lien": "https://fidoalliance.org/biometric-update-passkey-adoption-stalls-at-scale-despite-strong-interest-new-study-shows/",
+      "date": "2026-06-17",
+      "resume": "The FIDO Alliance and HID have released new research showing a widening gap between enterprise confidence in identity security and day‑to‑day operational performance. The State of Physical and Digital Identity in the Enterprise report […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Request for Proposal (RFP): ISO/IEC 17065 Accreditation Consultancy",
+      "lien": "https://fidoalliance.org/request-for-proposal-rfp-iso-iec-17065-accreditation-consultancy/",
+      "date": "2026-06-17",
+      "resume": "The FIDO Alliance is seeking a specialized consulting partner to guide us through the ISO/IEC 17065 accreditation process. Our objective is to be recognized as a Certification Body (CB) capable […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "HRTECH EDGE: Most Enterprises Think Identity Access Is Secure. New Research Suggests Otherwise",
+      "lien": "https://fidoalliance.org/hrtech-edge-most-enterprises-think-identity-access-is-secure-new-research-suggests-otherwise/",
+      "date": "2026-06-16",
+      "resume": "Enterprises may be more confident about identity security than they should be. A new report from the FIDO Alliance and HID finds a striking disconnect between how organizations perceive their […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Carrier Management: Major Gap Between Identity Security Confidence and Reality: Study",
+      "lien": "https://fidoalliance.org/carrier-management-major-gap-between-identity-security-confidence-and-reality-study/",
+      "date": "2026-06-16",
+      "resume": "A new report uncovered a significant disconnect between enterprise confidence in identity security and operational reality, according to identity technology providers FIDO Alliance and HID. Of the 500 IT and […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Crypto News: xMoney revolutionizes digital payments: first in the world to launch Mastercard Payment Passkey via app",
+      "lien": "https://fidoalliance.org/crypto-news-xmoney-revolutionizes-digital-payments-first-in-the-world-to-launch-mastercard-payment-passkey-via-app/",
+      "date": "2026-06-15",
+      "resume": "xMoney marks a key milestone in the evolution of digital payments, becoming the world’s first Mastercard issuer to launch the creation and enrollment of the Payment Passkey directly through its own mobile banking application. […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Report: The State of Physical and Digital Identity in the Enterprise",
+      "lien": "https://fidoalliance.org/report-the-state-of-physical-and-digital-identity-in-the-enterprise/",
+      "date": "2026-06-15",
+      "resume": "FIDO Alliance and HID have launched The State of Physical and Digital Identity in the Enterprise, a new research report examining how organizations manage physical and logical access across their […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "New FIDO Alliance and HID Study Reveals Major Gap Between Identity Security Confidence and Reality",
+      "lien": "https://fidoalliance.org/new-fido-alliance-and-hid-study-reveals-major-gap-between-identity-security-confidence-and-reality/",
+      "date": "2026-06-15",
+      "resume": "Research Reveals 94% of Enterprises Claim They Can Revoke Employee Access Within 24 Hours, Yet 35% experienced delays or failures in the past two years Identiverse, Las Vegas, June 15, […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "ID Tech: FIDO Opens June Interoperability Testing Window for Certification Candidates",
+      "lien": "https://fidoalliance.org/id-tech-fido-opens-june-interoperability-testing-window-for-certification-candidates/",
+      "date": "2026-06-11",
+      "resume": "The FIDO Alliance has opened its June interoperability testing event, giving FIDO2 and FIDO UAF implementers a certification step for passwordless authentication products. The remote testing window runs June 8-12, […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Global Banking and Finance Review: The Growing Role of FIDO and Passkeys in Banking Authentication",
+      "lien": "https://fidoalliance.org/global-banking-and-finance-review-the-growing-role-of-fido-and-passkeys-in-banking-authentication/",
+      "date": "2026-06-10",
+      "resume": "Banking’s Authentication Problem Has Changed Banks are no longer fighting simple password reuse. They’re facing real-time phishing kits, MFA fatigue, session hijacking, AI-powered social engineering, and more. Traditional MFA methods, such […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "ID Tech: RSA Extends Passwordless Authentication to Linux Environments",
+      "lien": "https://fidoalliance.org/id-tech-rsa-extends-passwordless-authentication-to-linux-environments/",
+      "date": "2026-06-05",
+      "resume": "RSA has extended its passwordless authentication platform to Linux, bringing FIDO-based, phishing-resistant sign-in to Linux servers, developer workstations, and critical infrastructure that have typically relied on passwords and other legacy […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Benchmark: HID adds governance layer to FIDO authenticators with Enterprise Attestation",
+      "lien": "https://fidoalliance.org/benchmark-hid-adds-governance-layer-to-fido-authenticators-with-enterprise-attestation/",
+      "date": "2026-06-05",
+      "resume": "Passkeys have made real progress in reducing phishing risk, but they do not tell an organisation much about the device being used to create a credential – whether it was […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "CISO Tradecraft® Podcast: Passwordless Authentication",
+      "lien": "https://fidoalliance.org/ciso-tradecraft-podcast-passwordless-authentication/",
+      "date": "2026-05-29",
+      "resume": "In this discussion, G. Mark Hardy and Nishant Kaushik explore the necessity of moving beyond traditional passwords, which they define as the original sin of cybersecurity due to their vulnerability […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Semperis: Enforcing Phishing-Resistant Authentication at Scale with Passkeys",
+      "lien": "https://fidoalliance.org/semperis-enforcing-phishing-resistant-authentication-at-scale-with-passkeys/",
+      "date": "2026-05-29",
+      "resume": "Corporate Overview Semperis is an identity security company founded in 2013 and headquartered in Hoboken, New Jersey, with approximately 600 employees across North America, Europe, APAC and Israel. The company’s […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Associated Press (syndicated from Business Wire): FIDO Alliance Announces Digital Identity and Authentication-Focused Agenda Themes for Authenticate APAC 2026 Conference",
+      "lien": "https://fidoalliance.org/associated-press-syndicated-from-business-wire-fido-alliance-announces-digital-identity-and-authentication-focused-agenda-themes-for-authenticate-apac-2026-conference/",
+      "date": "2026-05-27",
+      "resume": "The FIDO Alliance today announced agenda themes and program highlights for Authenticate APAC 2026, taking place June 2–3 at the Grand Hyatt Singapore. Bringing together global and regional leaders in authentication […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Banesco Banco Universal: Scaling Phishing-Resistant Authentication to 2.2 Million Users",
+      "lien": "https://fidoalliance.org/banesco-banco-universal-scaling-phishing-resistant-authentication-to-2-2-million-users/",
+      "date": "2026-05-27",
+      "resume": "Corporate Overview Banesco Banco Universal is the leading private bank in Venezuela, with more than 2.4 million monthly active users across its mobile and web banking platforms. The bank provides […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Building the Trust Layer for Agentic Payments with AP2 and Verifiable Intent",
+      "lien": "https://fidoalliance.org/building-the-trust-layer-for-agentic-payments-with-ap2-and-verifiable-intent/",
+      "date": "2026-05-26",
+      "resume": "Nishant Kaushik, CTO, FIDO Alliance Our agents are getting more capable by the day. They write code, respond to emails, detect vulnerabilities, and optimize workflows. And increasingly, they will shop […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "FIDO Alliance Announces Agenda for Authenticate APAC 2026",
+      "lien": "https://fidoalliance.org/fido-alliance-announces-agenda-for-authenticate-apac-2026-2/",
+      "date": "2026-05-21",
+      "resume": "Global innovators from Adidas, Apple, Grab, OpenAI, Samsung Electronics and more to share expertise at Singapore authentication & identity event Singapore, April 30, 2026 – The FIDO Alliance today announced […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "FIDO Case Study: DragonSoft Security Associates Inc.",
+      "lien": "https://fidoalliance.org/fido-case-study-dragonsoft-security-associates-inc/",
+      "date": "2026-05-20",
+      "resume": "Redefining Cybersecurity Governance: From Vulnerability Detection to Identity-Based Defense 1. Describe your service/platform/product and how it’s using passkeys, based on FIDO authentication. DragonSoft is a leading provider of cybersecurity vulnerability […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Identity Week: Amazon shares data on their customer passkey adoption",
+      "lien": "https://fidoalliance.org/https-fidoalliance-org-amazon-shares-data-on-their-customer-passkey-adoption/",
+      "date": "2026-05-14",
+      "resume": "Amazon is sharing new data to suggest passkeys are in favour with 465 million customers now, ensuring expedited, secure authentication six times quicker than traditional passwords. Passkeys achieve an enhanced […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "AI Invest Official: Singapore Passkey Adoption Hits 5 Billion Amid Rising Demand for Secure Authentication",
+      "lien": "https://fidoalliance.org/ai-invest-official-singapore-passkey-adoption-hits-5-billion-amid-rising-demand-for-secure-authentication/",
+      "date": "2026-05-14",
+      "resume": "Singapore has reached a milestone of 5 billion passkeys in use worldwide, as reported by the FIDO Alliance. The adoption of passkeys has been driven by a shift away from […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Across the Passkey Landscape: Expert AMA",
+      "lien": "https://fidoalliance.org/across-the-passkey-landscape-expert-ama/",
+      "date": "2026-05-07",
+      "resume": "WEBINAR | Across the Passkey Landscape: Expert AMA Attendees celebrated World Passkey Day with FIDO Alliance in a dynamic, interactive AMA-style webinar on May 7. This special session brought together […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Five Billion Passkeys: A Milestone, Not a Finish Line",
+      "lien": "https://fidoalliance.org/five-billion-passkeys-a-milestone-not-a-finish-line/",
+      "date": "2026-05-07",
+      "resume": "Megan Shamas, CMO, FIDO Alliance On World Passkey Day 2026, we are announcing that an estimated 5 billion passkeys are now in active use worldwide. A decade ago, that scale […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "FIDO Alliance Reports Accelerating Global Passkey Adoption on World Passkey Day 2026",
+      "lien": "https://fidoalliance.org/fido-alliance-reports-accelerating-global-passkey-adoption-on-world-passkey-day-2026/",
+      "date": "2026-05-07",
+      "resume": "Global research from the FIDO Alliance finds near-universal awareness of passkeys, with high adoption rates among consumers and enterprises MOUNTAIN VIEW, Calif., May 7, 2026 – On World Passkey Day […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "The State of Passkeys 2026: Global Consumer and Workforce Report",
+      "lien": "https://fidoalliance.org/the-state-of-passkeys-2026-global-consumer-and-workforce-report/",
+      "date": "2026-05-07",
+      "resume": "Passkeys have reached global scale with 5 billion passkeys now in active use. Across both consumer and workforce environments, awareness is now near-universal and adoption has followed: 90% of consumers […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "PYMNTS: Google and Mastercard Contribute Agentic Commerce Standards to FIDO Alliance",
+      "lien": "https://fidoalliance.org/pymnts-google-and-mastercard-contribute-agentic-commerce-standards-to-fido-alliance/",
+      "date": "2026-05-04",
+      "resume": "The FIDO Alliance plans to develop standards for artificial intelligence (AI) agentic interactions and commerce that will define trusted mechanisms for how agents authenticate, act and transact on behalf of users. In these initiatives, […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Wirecutter: Passkeys Are the New Passwords. You Should Start Using Them Now.",
+      "lien": "https://fidoalliance.org/wirecutter-passkeys-are-the-new-passwords-you-should-start-using-them-now/",
+      "date": "2026-04-30",
+      "resume": "Passkeys Are the New Passwords. You Should Start Using Them Now. For 15 years, experts have told me that passwords are the biggest problem with online security and that’s just […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "The Payers: Google donates Agent Payments Protocol to FIDO Alliance",
+      "lien": "https://fidoalliance.org/google-donates-agent-payments-protocol-to-fido-alliance/",
+      "date": "2026-04-29",
+      "resume": "Google has donated its Agent Payments Protocol to the FIDO Alliance and released an updated version, including autonomous payment capabilities. The move is intended to ensure AP2 remains platform-agnostic and […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "FinTech Magazine: How FIDO Leads the Push for Trusted AI-Driven Transactions",
+      "lien": "https://fidoalliance.org/how-fido-leads-the-push-for-trusted-ai-driven-transactions/",
+      "date": "2026-04-29",
+      "resume": "FIDO Alliance launches new standards to secure AI agent interactions, enabling trusted authentication and payments in emerging agentic commerce ecosystems As AI agents move from experimental tools to active participants […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Wired: The Race Is on to Keep AI Agents From Running Wild With Your Credit Cards",
+      "lien": "https://fidoalliance.org/wired-the-race-is-on-to-keep-ai-agents-from-running-wild-with-your-credit-cards/",
+      "date": "2026-04-28",
+      "resume": "AI agents may soon be buying your stuff for you. The FIDO Alliance has teamed up with Google and Mastercard to try to ensure that shopping in the near future […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "The Agentic Era Is Here. Now We Need to Make It Trustworthy.",
+      "lien": "https://fidoalliance.org/the-agentic-era-is-here-now-we-need-to-make-it-trustworthy/",
+      "date": "2026-04-28",
+      "resume": "Andrew Shikiar, CEO and Executive Director, FIDO Alliance AI agents are starting to change how people and businesses get things done online. The shift is fundamental: agents can research, make […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "FIDO Alliance to Develop Standards for Trusted AI Agent Interactions",
+      "lien": "https://fidoalliance.org/fido-alliance-to-develop-standards-for-trusted-ai-agent-interactions/",
+      "date": "2026-04-28",
+      "resume": "Formation of Agentic Authentication Working Group and development of agentic payment frameworks will support trusted, interoperable agentic workflows April 28, 2026 – The FIDO Alliance today announced initiatives to develop […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "BBC: UK cyber chiefs say it’s time to ditch passwords for passkeys – what are they?",
+      "lien": "https://fidoalliance.org/uk-cyber-chiefs-say-its-time-to-ditch-passwords-for-passkeys/",
+      "date": "2026-04-25",
+      "resume": "It’s time to ditch passwords for passkeys People in the UK have been urged to start ditching passwords in favour of passkeys, where available, as a way to secure their […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "National Cyber Security Centre (NCSC): Passkeys are more secure than traditional ways to log in",
+      "lien": "https://fidoalliance.org/national-cyber-security-centre-ncsc-passkeys-are-more-secure-than-traditional-ways-to-log-in/",
+      "date": "2026-04-23",
+      "resume": "Passkeys are more secure than traditional ways to log in Passkeys offer a more usable, secure replacement for passwords and are already supported by most modern devices. At CYBERUK 2026 […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Mobile ID World: Mastercard and Google Put Passkeys at the Heart of AI Payments",
+      "lien": "https://fidoalliance.org/mastercard-ai-payments-passkeys-fido-alliance/",
+      "date": "2026-04-16",
+      "resume": "When an AI agent buys something on your behalf, how does the merchant know you actually authorized it? That question sits at the center of Verifiable Intent, an open-source cryptographic […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "TechTarget Search Security: How to roll out an enterprise passkey deployment",
+      "lien": "https://fidoalliance.org/passkeys/",
+      "date": "2026-04-16",
+      "resume": "CISOs know that the human element can be the weakest link in an enterprise’s cybersecurity defenses, often surfacing when end users create weak passwords that threat actors easily crack. Seeking […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Biometric Update: OpenAI joins FIDO Alliance to help AI agent authentication push",
+      "lien": "https://fidoalliance.org/openai-fido/",
+      "date": "2026-04-14",
+      "resume": "OpenAI is the newest member of the FIDO Alliance, joining the passwordless authentication group to contribute to its efforts to provide the secure and private digital identity frameworks that will be […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Biometric Update: Digital identity research warns of ‘password debt’ as enterprises delay IAM rollouts",
+      "lien": "https://fidoalliance.org/biometric-update-digital-identity-research-warns-of-password-debt-as-enterprises-delay-iam-rollouts/",
+      "date": "2026-04-09",
+      "resume": "Enterprises may be sharpening their understanding of digital identity threats but the industry is still struggling to turn that knowledge into large‑scale execution. Hypr’s latest State of Passwordless Identity Assurance […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    },
+    {
+      "titre": "Financial News-UK: The Death of the Password – How Passkeys Secretly Took Over the Internet",
+      "lien": "https://fidoalliance.org/financial-news-uk-the-death-of-the-password-how-passkeys-secretly-took-over-the-internet/",
+      "date": "2026-04-09",
+      "resume": "Researchers revealed what might be the biggest collection of stolen login credentials ever gathered in one location sometime in the middle of 2025. A compiled dataset, organized and searchable, contains […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-25"
+    }
+  ]
+}

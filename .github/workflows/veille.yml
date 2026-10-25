@@ -1,0 +1,27 @@
+name: Collecte de la veille
+
+on:
+  schedule:
+    - cron: "0 6 * * *" # tous les jours à 6 h (UTC)
+  workflow_dispatch: # bouton « Run workflow » pour lancer à la main
+
+permissions:
+  contents: write
+
+jobs:
+  collecte:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Collecter les articles des flux RSS
+        run: node scripts/collecte.mjs
+      - name: Enregistrer les nouveaux articles
+        run: |
+          git config user.name "veille-bot"
+          git config user.email "veille-bot@users.noreply.github.com"
+          git add data/articles.json
+          git diff --cached --quiet || git commit -m "Veille : collecte du $(date +%d/%m/%Y)"
+          git push

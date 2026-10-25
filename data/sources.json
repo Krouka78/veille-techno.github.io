@@ -1,0 +1,10 @@
+[
+  { "nom": "FIDO Alliance", "rss": "https://fidoalliance.org/feed/", "site": "https://fidoalliance.org", "langue": "en" },
+  { "nom": "Google Security Blog", "rss": "https://security.googleblog.com/feeds/posts/default", "site": "https://security.googleblog.com", "langue": "en" },
+  { "nom": "Microsoft Security Blog", "rss": "https://www.microsoft.com/en-us/security/blog/feed/", "site": "https://www.microsoft.com/en-us/security/blog/", "langue": "en" },
+  { "nom": "Biometric Update", "rss": "https://www.biometricupdate.com/feed", "site": "https://www.biometricupdate.com", "langue": "en" },
+  { "nom": "The Hacker News", "rss": "https://feeds.feedburner.com/TheHackersNews", "site": "https://thehackernews.com", "langue": "en" },
+  { "nom": "BleepingComputer", "rss": "https://www.bleepingcomputer.com/feed/", "site": "https://www.bleepingcomputer.com", "langue": "en" },
+  { "nom": "LeMagIT", "rss": "https://www.lemagit.fr/rss/ContentSyndication.xml", "site": "https://www.lemagit.fr", "langue": "fr" },
+  { "nom": "CNIL", "rss": "https://www.cnil.fr/fr/rss.xml", "site": "https://www.cnil.fr", "langue": "fr" }
+]

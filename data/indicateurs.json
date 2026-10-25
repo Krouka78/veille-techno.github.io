@@ -1,0 +1,42 @@
+{
+  "note": "Relevés à compléter à chaque nouveau rapport officiel (FIDO Alliance en priorité).",
+  "indicateurs": [
+    {
+      "id": "passkeys",
+      "nom": "Passkeys utilisées dans le monde",
+      "releves": [
+        { "date": "2026-05-07", "valeur": "5 milliards", "source": "FIDO Alliance — State of Passkeys 2026", "lien": "https://fidoalliance.org/the-state-of-passkeys-2026-global-consumer-and-workforce-report/" },
+        { "date": "2026-10-15", "valeur": "7 milliards", "source": "FIDO Alliance — Passkey Index 2026", "lien": "https://fidoalliance.org/7-billion-passkeys-and-counting-the-next-chapter-of-passwordless-authentication/" }
+      ]
+    },
+    {
+      "id": "services",
+      "nom": "Grands services mesurés par le Passkey Index",
+      "releves": [
+        { "date": "2025", "valeur": "9", "source": "FIDO Alliance — Passkey Index 2025 (cité dans l'édition 2026)", "lien": "https://fidoalliance.org/7-billion-passkeys-and-counting-the-next-chapter-of-passwordless-authentication/" },
+        { "date": "2026-10-15", "valeur": "15", "source": "FIDO Alliance — Passkey Index 2026", "lien": "https://fidoalliance.org/7-billion-passkeys-and-counting-the-next-chapter-of-passwordless-authentication/" }
+      ]
+    },
+    {
+      "id": "connexions",
+      "nom": "Part des connexions réussies faites par passkey",
+      "releves": [
+        { "date": "2026-10-15", "valeur": "plus d'un tiers", "source": "FIDO Alliance — Passkey Index 2026", "lien": "https://fidoalliance.org/7-billion-passkeys-and-counting-the-next-chapter-of-passwordless-authentication/" }
+      ]
+    },
+    {
+      "id": "activation",
+      "nom": "Consommateurs ayant activé une passkey sur au moins un compte",
+      "releves": [
+        { "date": "2026-05-07", "valeur": "75 %", "source": "FIDO Alliance — State of Passkeys 2026 (11 000 personnes, 10 pays dont la France)", "lien": "https://fidoalliance.org/the-state-of-passkeys-2026-global-consumer-and-workforce-report/" }
+      ]
+    },
+    {
+      "id": "entreprises",
+      "nom": "Organisations qui déploient ou testent les passkeys pour leurs salariés",
+      "releves": [
+        { "date": "2026-05-07", "valeur": "68 %", "source": "FIDO Alliance — State of Passkeys 2026 (1 400 décideurs)", "lien": "https://fidoalliance.org/the-state-of-passkeys-2026-global-consumer-and-workforce-report/" }
+      ]
+    }
+  ]
+}
