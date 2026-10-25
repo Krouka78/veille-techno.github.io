@@ -23,6 +23,27 @@ Une **passkey** (clé d'accès FIDO2) remplace le mot de passe par une paire de 
 
 ---
 
+## Frise chronologique
+
+La page de veille présente une **frise de 1961 à aujourd'hui** : un moyen d'authentification par étape, illustré, avec deux repères de progrès — *résiste à l'hameçonnage* et *se passe du mot de passe*. Données et illustrations (SVG dessinés, sans image externe) : [`frise.js`](frise.js).
+
+| Année | Moyen | Résiste à l'hameçonnage | Sans mot de passe |
+|---|---|---|---|
+| 1961 | Premier mot de passe informatique (CTSS, MIT) | ✗ | ✗ |
+| 1979 | Mot de passe haché (Unix) | ✗ | ✗ |
+| 1986 | Jeton à code temporaire (RSA SecurID) | ✗ | ✗ |
+| 2011 | Double authentification par SMS (Google) | ✗ | ✗ |
+| 2013 | Empreinte digitale sur smartphone (Touch ID) | ✗ | ✗ |
+| 2014 | Clé de sécurité physique (FIDO U2F) | ✓ | ✗ |
+| 2017 | Reconnaissance du visage (Face ID) | ✗ | ✗ |
+| 2019 | WebAuthn, standard du W3C | ✓ | en partie |
+| 2022 | Passkeys (Apple, Google, Microsoft) | ✓ | ✓ |
+| 2023 – 2025 | Sans mot de passe par défaut (Google, Microsoft) | ✓ | ✓ |
+| 2026 | Usage de masse : 7 milliards de passkeys | ✓ | ✓ |
+| Demain | Biométrie continue par le cœur (Nymi, FIDO2) | ✓ | ✓ |
+
+---
+
 ## Indicateurs suivis
 
 | Indicateur | Relevés | Source |
@@ -65,6 +86,7 @@ Données détaillées : [`data/indicateurs.json`](data/indicateurs.json) — à 
 
 ```
 ├── index.html                 page de veille (GitHub Pages)
+├── frise.js                   frise chronologique illustrée
 ├── README.md                  ce document
 ├── sources.md                 évaluation des sources
 ├── data/

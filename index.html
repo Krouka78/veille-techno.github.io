@@ -11,17 +11,17 @@
   <style>
     :root {
       --bg: #faf7f2; --panel: #ffffff; --ink: #1d1712; --muted: #6b5d50; --line: #e7dccf;
-      --accent: #c2410c; --accent-soft: #fde7d6; --chip: #f3ece3;
+      --accent: #c2410c; --accent-soft: #fde7d6; --chip: #f3ece3; --ok: #15803d; --bad: #b42318;
     }
     @media (prefers-color-scheme: dark) {
       :root:not([data-theme="light"]) {
         --bg: #14110d; --panel: #1e1712; --ink: #f6efe4; --muted: #b9a99a; --line: #3a2e22;
-        --accent: #ff7a29; --accent-soft: #3a2416; --chip: #2a2018;
+        --accent: #ff7a29; --accent-soft: #3a2416; --chip: #2a2018; --ok: #4ade80; --bad: #f97066;
       }
     }
     :root[data-theme="dark"] {
       --bg: #14110d; --panel: #1e1712; --ink: #f6efe4; --muted: #b9a99a; --line: #3a2e22;
-      --accent: #ff7a29; --accent-soft: #3a2416; --chip: #2a2018;
+      --accent: #ff7a29; --accent-soft: #3a2416; --chip: #2a2018; --ok: #4ade80; --bad: #f97066;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background: var(--bg); color: var(--ink); font: 400 16px/1.6 Inter, system-ui, sans-serif; }
@@ -79,6 +79,35 @@
     th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); }
     th { font-family: "JetBrains Mono", monospace; font-size: 0.7rem; font-weight: 400; color: var(--accent); text-transform: uppercase; letter-spacing: 0.04em; }
     td.n { font-family: "JetBrains Mono", monospace; }
+    .frise-nav { display: flex; gap: 8px; margin-bottom: 14px; }
+    .frise-nav button { font: inherit; font-size: 0.85rem; width: 38px; height: 34px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); cursor: pointer; }
+    .frise-nav button:hover { border-color: var(--accent); color: var(--accent); }
+    .frise-nav span { font-size: 0.78rem; color: var(--muted); align-self: center; margin-left: 6px; }
+    .frise { display: grid; grid-auto-flow: column; grid-auto-columns: 250px; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 34px 2px 14px; position: relative; scrollbar-width: thin; }
+    .frise::before { content: ""; position: absolute; left: 0; right: 0; top: 14px; height: 2px; background: linear-gradient(90deg, var(--line), var(--accent)); min-width: 100%; width: var(--w, 100%); }
+    .etape { scroll-snap-align: start; position: relative; background: var(--panel); border: 1px solid var(--line); padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 8px; }
+    .etape::before { content: ""; position: absolute; top: -26px; left: 18px; width: 12px; height: 12px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); }
+    .etape.fort::before { background: var(--accent); }
+    .etape .an { position: absolute; top: -40px; left: 36px; font-size: 0.8rem; font-weight: 600; color: var(--accent); }
+    .ill { width: 100%; height: auto; aspect-ratio: 16 / 10; background: var(--bg); border: 1px solid var(--line); color: var(--muted); }
+    .ill * { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .ill text, .ill tspan { fill: var(--ink); stroke: none; font: 500 9px "JetBrains Mono", monospace; }
+    .ill .a { stroke: var(--accent); } .ill text.a, .ill tspan.a { fill: var(--accent); stroke: none; }
+    .ill .f { fill: var(--chip); } .ill text.p { fill: var(--muted); } .ill .x { stroke: var(--bad); stroke-width: 3; }
+    .etape h3 { font-size: 1rem; line-height: 1.25; }
+    .etape p { font-size: 0.84rem; color: var(--muted); }
+    .reperes { display: flex; flex-direction: column; gap: 4px; margin-top: auto; padding-top: 6px; border-top: 1px solid var(--line); }
+    .reperes span { font-size: 0.74rem; display: flex; gap: 6px; align-items: center; }
+    .reperes b { font-family: "JetBrains Mono", monospace; width: 16px; text-align: center; }
+    .oui b { color: var(--ok); } .non b { color: var(--bad); } .part b { color: var(--accent); }
+    @media (max-width: 640px) {
+      .frise { grid-auto-flow: row; grid-auto-columns: auto; overflow: visible; padding: 0 0 0 26px; }
+      .frise::before { left: 6px; top: 0; bottom: 0; width: 2px; height: auto; min-width: 0; background: linear-gradient(180deg, var(--line), var(--accent)); }
+      .etape { margin-top: 28px; }
+      .etape::before { left: -26px; top: -22px; }
+      .etape .an { left: 0; top: -26px; }
+      .frise-nav { display: none; }
+    }
     footer { padding: 32px 0 48px; font-size: 0.78rem; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
     .theme { position: fixed; top: 14px; right: 14px; font: inherit; font-size: 0.8rem; padding: 6px 10px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); cursor: pointer; }
     @media (max-width: 560px) { .articles li { grid-template-columns: 1fr; gap: 2px; } }
@@ -108,9 +137,16 @@
       <div class="stats" id="stats"></div>
     </section>
 
+    <section id="frise-section">
+      <h2>Frise chronologique : 65 ans d'authentification</h2>
+      <p class="sub">Les moyens de se connecter, année par année. Deux repères montrent le progrès : résister à l'hameçonnage, puis se passer du mot de passe.</p>
+      <div class="frise-nav"><button type="button" id="fg" aria-label="Étapes précédentes">←</button><button type="button" id="fd" aria-label="Étapes suivantes">→</button><span>Faites défiler la frise</span></div>
+      <div class="frise" id="frise"></div>
+    </section>
+
     <section>
-      <h2>Chronologie des avancées</h2>
-      <p class="sub">Du premier standard aux connexions du quotidien.</p>
+      <h2>Faits marquants récents</h2>
+      <p class="sub">Les annonces de 2026, avec leur source.</p>
       <ol class="timeline" id="timeline"></ol>
     </section>
 
@@ -157,6 +193,7 @@
     <span id="maj2"></span>
   </footer>
 
+  <script src="frise.js"></script>
   <script>
     const DEPOT = "https://github.com/Krouka78/veille-techno.github.io/blob/main/";
     const FICHES = [
@@ -184,6 +221,28 @@
       try { localStorage.setItem("theme", t); } catch {}
     };
 
+    // frise chronologique
+    const frise = document.getElementById("frise");
+    const rep = (v, txt) => {
+      const s = el("span", v === true ? "oui" : v === false ? "non" : "part");
+      s.append(el("b", null, v === true ? "✓" : v === false ? "✗" : "~"), document.createTextNode(txt + (v === "partiel" ? " (en partie)" : "")));
+      return s;
+    };
+    (window.FRISE || []).forEach((x) => {
+      const c = el("article", "etape" + (x.sansMdp === true ? " fort" : ""));
+      c.append(el("div", "an mono", x.annee));
+      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      svg.setAttribute("viewBox", "0 0 160 100"); svg.setAttribute("class", "ill"); svg.setAttribute("role", "img");
+      svg.setAttribute("aria-label", x.moyen); svg.innerHTML = x.svg;
+      const r = el("div", "reperes");
+      r.append(rep(x.hameconnage, "Résiste à l'hameçonnage"), rep(x.sansMdp, "Se passe du mot de passe"));
+      c.append(svg, el("h3", null, x.moyen), el("p", null, x.texte), r);
+      frise.append(c);
+    });
+    frise.style.setProperty("--w", frise.scrollWidth + "px");
+    document.getElementById("fg").onclick = () => frise.scrollBy({ left: -528, behavior: "smooth" });
+    document.getElementById("fd").onclick = () => frise.scrollBy({ left: 528, behavior: "smooth" });
+
     // fiches
     const fiches = document.getElementById("fiches");
     FICHES.forEach((x) => {
@@ -207,7 +266,7 @@
 
     fetch("data/chronologie.json").then((r) => r.json()).then((items) => {
       const ol = document.getElementById("timeline");
-      items.slice().reverse().forEach((x, k) => {
+      items.filter((x) => x.date >= "2026").reverse().forEach((x, k) => {
         const li = el("li", k < 3 ? "recent" : "");
         li.append(el("div", "d mono", fmt(x.date)));
         const h = el("h3");
