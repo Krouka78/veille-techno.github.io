@@ -1,6 +1,15 @@
 {
-  "miseAJour": "2026-10-29T11:52:05.530Z",
+  "miseAJour": "2026-10-30T11:45:22.871Z",
   "articles": [
+    {
+      "titre": "FIDO testing experts address deepfake threat and biometrics certification changes",
+      "lien": "https://www.biometricupdate.com/202610/fido-testing-experts-address-deepfake-threat-and-biometrics-certification-changes",
+      "date": "2026-10-29",
+      "resume": "AI has upended cybersecurity and deepfakes are the form the technology most often takes in attacks on biometric processes. Reports from Biometric Update and Goode Intelligence forecast market growth of 42 and 99 percent CAGR from 2026 to 2028, respectively, for deepfake fraud detection and injection attack detection (I",
+      "source": "Biometric Update",
+      "langue": "en",
+      "collecte": "2026-10-30"
+    },
     {
       "titre": "Microsoft urges Entra ID admins to migrate users to passkeys",
       "lien": "https://www.bleepingcomputer.com/news/microsoft/microsoft-reminds-entra-id-admins-to-migrate-users-to-passkeys/",
