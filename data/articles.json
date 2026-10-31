@@ -1,6 +1,60 @@
 {
-  "miseAJour": "2026-10-30T11:45:22.871Z",
+  "miseAJour": "2026-10-31T11:18:54.904Z",
   "articles": [
+    {
+      "titre": "ITBrief: HID joins FIDO Alliance board as passkeys gain traction",
+      "lien": "https://fidoalliance.org/itbrief-hid-joins-fido-alliance-board-as-passkeys-gain-traction/",
+      "date": "2026-10-30",
+      "resume": "HID has joined the FIDO Alliance Board of Directors, with Sean Dyon serving as the company’s primary board delegate. The appointment gives HID a seat on the governing body of […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-31"
+    },
+    {
+      "titre": "MobileIDWorld: Amazon Says More Than 500 Million Customers Have Enabled Passkeys",
+      "lien": "https://fidoalliance.org/mobileidworld-amazon-says-more-than-500-million-customers-have-enabled-passkeys/",
+      "date": "2026-10-30",
+      "resume": "More than 500 million Amazon customers have now enabled passkeys on their accounts, the company says. A passkey lets them sign in with the fingerprint, face scan or lock-screen PIN […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-31"
+    },
+    {
+      "titre": "FinXTech: The Banking Industry Warms to Passkeys",
+      "lien": "https://fidoalliance.org/finxtech-the-banking-industry-warms-to-passkeys/",
+      "date": "2026-10-30",
+      "resume": "As new forms of artificial intelligence speed up fraudsters’ ability to steal online account credentials, security experts are advising financial institutions to move away from passwords and implement passkey login […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-31"
+    },
+    {
+      "titre": "Biometric Update: FIDO Alliance counts 7 billion passkeys as adoption gains momentum",
+      "lien": "https://fidoalliance.org/biometric-update-fido-alliance-counts-7-billion-passkeys-as-adoption-gains-momentum/",
+      "date": "2026-10-30",
+      "resume": "New Passkey Index shows 90% of accounts eligible but only 42% enrolled, as FIDO introduces deployment guidance and more companies adopt passkeys As the FIDO Alliance kicks off this year’s […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-31"
+    },
+    {
+      "titre": "Biometric Update: FIDO testing experts address deepfake threat and biometrics certification changes",
+      "lien": "https://fidoalliance.org/biometric-update-fido-testing-experts-address-deepfake-threat-and-biometrics-certification-changes/",
+      "date": "2026-10-30",
+      "resume": "AI has upended cybersecurity and deepfakes are the form the technology most often takes in attacks on biometric processes. Reports from Biometric Update and Goode Intelligence forecast market growth of […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-10-31"
+    },
+    {
+      "titre": "Passkeys move from availability to everyday use, FIDO Index finds",
+      "lien": "https://www.biometricupdate.com/202610/passkeys-move-from-availability-to-everyday-use-fido-index-finds",
+      "date": "2026-10-30",
+      "resume": "Passkeys have come of age . Having started out as a tricky-to-explain replacement for ubiquitous passwords, passkeys have been successfully shepherded by the FIDO Alliance into mainstream tech integration. Many of the world’s largest tech companies have adopted passkeys. As the summary for a talk at Authenticate 2026 p",
+      "source": "Biometric Update",
+      "langue": "en",
+      "collecte": "2026-10-31"
+    },
     {
       "titre": "FIDO testing experts address deepfake threat and biometrics certification changes",
       "lien": "https://www.biometricupdate.com/202610/fido-testing-experts-address-deepfake-threat-and-biometrics-certification-changes",
