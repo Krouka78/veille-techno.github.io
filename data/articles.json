@@ -1,6 +1,15 @@
 {
-  "miseAJour": "2026-11-03T13:06:37.030Z",
+  "miseAJour": "2026-11-04T13:21:59.061Z",
   "articles": [
+    {
+      "titre": "mSecure Warns Users to Change Passwords, Reset 2FA and Passkeys After Suspicious Activity",
+      "lien": "https://thehackernews.com/2026/11/msecure-warns-users-to-change-passwords.html",
+      "date": "2026-11-03",
+      "resume": "Customers of the mSecure password manager are being urged to act now to protect the confidential information they store in it, possibly by changing passwords, resetting two-factor authentication (2FA), and removing passkeys. The warning came in an email sent on November 3 in the name of developer mSeven Software. It sa",
+      "source": "The Hacker News",
+      "langue": "en",
+      "collecte": "2026-11-04"
+    },
     {
       "titre": "ITBrief: HID joins FIDO Alliance board as passkeys gain traction",
       "lien": "https://fidoalliance.org/itbrief-hid-joins-fido-alliance-board-as-passkeys-gain-traction/",
