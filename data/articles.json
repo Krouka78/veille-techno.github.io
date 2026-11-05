@@ -1,6 +1,42 @@
 {
-  "miseAJour": "2026-11-04T13:21:59.061Z",
+  "miseAJour": "2026-11-05T13:35:40.094Z",
   "articles": [
+    {
+      "titre": "MAIRE Goes Passwordless with YubiKeys",
+      "lien": "https://fidoalliance.org/maire-goes-passwordless-with-yubikeys/",
+      "date": "2026-11-05",
+      "resume": "Multinational engineering company improves security and simplifies user experience for global workforce. Source: Yubico Making the Energy Transition Happen MAIRE Group is an engineering and technology company which develops sustainable […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-11-05"
+    },
+    {
+      "titre": "Traceable evidence will form the basis of AI agents: Authenticate 2026 speakers",
+      "lien": "https://www.biometricupdate.com/202611/traceable-evidence-will-form-the-basis-of-ai-agents-authenticate-2026-speakers",
+      "date": "2026-11-04",
+      "resume": "AI agents are dominating conversations about technology and commerce, and accordingly many sessions at FIDO’s Authenticate 2026 focused on agentic authentication and authorization. A panel discussion on the third day of the event moderated by Consult Hyperion Principal Consultant Steve Smith looked at the issue from th",
+      "source": "Biometric Update",
+      "langue": "en",
+      "collecte": "2026-11-05"
+    },
+    {
+      "titre": "Ghana kicks off enforcement of compulsory biometric verification",
+      "lien": "https://www.biometricupdate.com/202611/ghana-kicks-off-enforcement-of-compulsory-biometric-verification",
+      "date": "2026-11-04",
+      "resume": "Ghana's National Identification Authority (NIA) has begun a nationwide exercise to ensure that institutions comply with new rules requiring biometric authentication of customers before providing services. The enforcement drive got underway on November 3, a day after officials of the ID authority addressed a press confe",
+      "source": "Biometric Update",
+      "langue": "en",
+      "collecte": "2026-11-05"
+    },
+    {
+      "titre": "mSecure password manager hack prompts password reset warnings",
+      "lien": "https://www.bleepingcomputer.com/news/security/msecure-password-manager-hack-prompts-password-reset-warnings/",
+      "date": "2026-11-04",
+      "resume": "mSeven Software is warning current and former mSecure password manager customers to change passwords, reset two-factor authentication, and remove passkeys following a cyberattack that reportedly exposed an encrypted customer database. [...]",
+      "source": "BleepingComputer",
+      "langue": "en",
+      "collecte": "2026-11-05"
+    },
     {
       "titre": "mSecure Warns Users to Change Passwords, Reset 2FA and Passkeys After Suspicious Activity",
       "lien": "https://thehackernews.com/2026/11/msecure-warns-users-to-change-passwords.html",
