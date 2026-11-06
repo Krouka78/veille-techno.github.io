@@ -1,5 +1,5 @@
 {
-  "miseAJour": "2026-11-05T13:35:40.094Z",
+  "miseAJour": "2026-11-06T13:19:44.779Z",
   "articles": [
     {
       "titre": "MAIRE Goes Passwordless with YubiKeys",
@@ -9,6 +9,15 @@
       "source": "FIDO Alliance",
       "langue": "en",
       "collecte": "2026-11-05"
+    },
+    {
+      "titre": "Biometric Update: Traceable evidence will form the basis of AI agents: Authenticate 2026 speakers",
+      "lien": "https://fidoalliance.org/biometric-update-traceable-evidence-will-form-the-basis-of-ai-agents-authenticate-2026-speakers/",
+      "date": "2026-11-05",
+      "resume": "Experts from Consult Hyperion, Prove, NIST, iProov identify biometric binding, liveness among key tools AI agents are dominating conversations about technology and commerce, and accordingly many sessions at FIDO’s Authenticate […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-11-06"
     },
     {
       "titre": "Traceable evidence will form the basis of AI agents: Authenticate 2026 speakers",
