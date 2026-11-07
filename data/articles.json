@@ -1,6 +1,15 @@
 {
-  "miseAJour": "2026-11-06T13:19:44.779Z",
+  "miseAJour": "2026-11-07T11:58:44.991Z",
   "articles": [
+    {
+      "titre": "Google proposes using digital credentials for secure account recovery",
+      "lien": "https://www.biometricupdate.com/202611/google-proposes-using-digital-credentials-for-secure-account-recovery",
+      "date": "2026-11-06",
+      "resume": "Google is developing an account recovery method using digital identity credentials to address security weaknesses in traditional recovery methods when people lose their phones. The company sees recovery as a complement to the security advantages provided by passkeys. Passkeys offer security, but if someone loses their ",
+      "source": "Biometric Update",
+      "langue": "en",
+      "collecte": "2026-11-07"
+    },
     {
       "titre": "MAIRE Goes Passwordless with YubiKeys",
       "lien": "https://fidoalliance.org/maire-goes-passwordless-with-yubikeys/",
