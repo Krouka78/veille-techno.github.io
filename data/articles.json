@@ -1,6 +1,15 @@
 {
-  "miseAJour": "2026-11-13T13:29:54.168Z",
+  "miseAJour": "2026-11-14T12:36:07.857Z",
   "articles": [
+    {
+      "titre": "Security Boulevard: Attackers Can’t Steal Passkeys, So They’re Enrolling Their Own",
+      "lien": "https://fidoalliance.org/security-boulevard-attackers-cant-steal-passkeys-so-theyre-enrolling-their-own/",
+      "date": "2026-11-13",
+      "resume": "*** This is a Security Bloggers Network syndicated blog from Deepak Gupta’s notebook authored by the team. Read the original post at: https://guptadeepak.com/passkey-enrollment-attacks/ Passkeys cannot be phished the way passwords […]",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-11-14"
+    },
     {
       "titre": "Google proposes using digital credentials for secure account recovery",
       "lien": "https://www.biometricupdate.com/202611/google-proposes-using-digital-credentials-for-secure-account-recovery",
