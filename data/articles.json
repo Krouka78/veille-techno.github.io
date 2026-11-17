@@ -1,6 +1,15 @@
 {
-  "miseAJour": "2026-11-16T14:06:02.431Z",
+  "miseAJour": "2026-11-17T14:59:33.323Z",
   "articles": [
+    {
+      "titre": "Dashlane Is Now Listed in the FIDO Metadata Service",
+      "lien": "https://fidoalliance.org/dashlane-is-now-listed-in-the-fido-metadata-service/",
+      "date": "2026-11-16",
+      "resume": "Spot your Dashlane passkeys at a glance. We’re now listed in the FIDO Alliance Metadata Service directory, which tells websites which provider created a passkey.",
+      "source": "FIDO Alliance",
+      "langue": "en",
+      "collecte": "2026-11-17"
+    },
     {
       "titre": "Security Boulevard: Attackers Can’t Steal Passkeys, So They’re Enrolling Their Own",
       "lien": "https://fidoalliance.org/security-boulevard-attackers-cant-steal-passkeys-so-theyre-enrolling-their-own/",
