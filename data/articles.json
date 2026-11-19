@@ -1,6 +1,15 @@
 {
-  "miseAJour": "2026-11-18T14:40:32.489Z",
+  "miseAJour": "2026-11-19T14:46:57.654Z",
   "articles": [
+    {
+      "titre": "Cloud « souverain » : en Europe, Google s’en remet à Thales, S3NS et ses partenaires",
+      "lien": "https://www.lemagit.fr/actualites/366654876/Cloud-souverain-en-Europe-Google-sen-remet-a-Thales-S3NS-et-ses-partenaires",
+      "date": "2026-11-18",
+      "resume": "Lors de son AI Sovereign Summit, le géant du cloud américain a vanté une vision pragmatique de la souveraineté numérique. S’il enrichit ses briques d’audit et de chiffrement, il a surtout fait la part belle à S3NS et à Thales, véritable clé d’accès aux marchés régulés européens.",
+      "source": "LeMagIT",
+      "langue": "fr",
+      "collecte": "2026-11-19"
+    },
     {
       "titre": "Dashlane Is Now Listed in the FIDO Metadata Service",
       "lien": "https://fidoalliance.org/dashlane-is-now-listed-in-the-fido-metadata-service/",
